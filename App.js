@@ -5,7 +5,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {createStackNavigator} from "@react-navigation/stack";
 import {BackButton} from "./src/components";
 import {
-  Build,
+  Stats,
   Menu,
   OptionsScreener,
   Profile,
@@ -33,7 +33,7 @@ const screenOptions = (props) => ({
       case "Explore":
         iconName = "explore";
         break;
-      case "Build":
+      case "Stats":
         iconName = "insert-chart-outlined";
         break;
       case "Browse":
@@ -111,7 +111,7 @@ const TabsStackScreen = () => {
         component={ExploreScreens}
         options={{headerLeft: null}}
       />
-      <Tab.Screen name="Build" component={Build} />
+      <Tab.Screen name="Stats" component={Stats} />
       <Tab.Screen
         name="Browse"
         component={BrowseScreens}
