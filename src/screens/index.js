@@ -6,11 +6,4 @@ import Profile from "./Menu/Profile";
 import StrategyScreener from "./StrategyScreener";
 import OptionsScreener from "./OptionsScreener";
 
-export {
-  Stats,
-  Login,
-  Menu,
-  Profile,
-  StrategyScreener,
-  OptionsScreener,
-};
+export { Stats, Login, Menu, Profile, StrategyScreener, OptionsScreener };

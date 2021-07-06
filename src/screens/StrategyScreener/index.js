@@ -4,7 +4,6 @@ import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
 
-
 const StrategyScreener = (props) => {
     const onSearch = async () => {
         props.navigation.navigate("StrategySelectStock");
@@ -30,30 +29,23 @@ const StrategyScreener = (props) => {
             <ContainerView
                 statusBarColor={colors.orange2}
                 containerColor={colors.orange2}
-                screenTitle={"Home"}
-                containerStyle={{padding: 0}}>
+                screenTitle={"Home"}>
                 <View
-                    style={{
-                        ...styles.container,
-                    }}
-                    contentContainerStyle={styles.contentContainer}
+                    style={styles.searchFieldsContainer}
                     keyboardShouldPersistTaps="handled">
-
-                    <View style={styles.searchFieldsContainer}>
-                        <Text
-                            style={{
-                                fontSize: 18,
-                                textAlign: "center",
-                                paddingHorizontal: 20,
-                                paddingVertical: 30,
-                                lineHeight: 26,
-                            }}>
-                            {"Our algorithms help to lorem ipsum dolor sit amet, consectetur adipiscing " +
-                                "elit, sed do eiusmod tempor incididunt ut labore. Let’s help find the strategy " +
-                                "that works best for you."}
-                        </Text>
-                        <GetStartedButton />
-                    </View>
+                    <Text
+                        style={{
+                            fontSize: 18,
+                            textAlign: "center",
+                            paddingHorizontal: 20,
+                            paddingVertical: 30,
+                            lineHeight: 26,
+                        }}>
+                        {"Our algorithms help to lorem ipsum dolor sit amet, consectetur adipiscing " +
+                            "elit, sed do eiusmod tempor incididunt ut labore. Let’s help find the strategy " +
+                            "that works best for you."}
+                    </Text>
+                    <GetStartedButton />
                 </View>
             </ContainerView>
         </View>
