@@ -3,7 +3,7 @@ import {
     fetchOptionsScreenerPending,
     fetchOptionsSuccess,
     setOptionsFilters,
-    fetchExpirationTimestampsSuccess
+    fetchExpirationTimestampsSuccess,
 } from "./actions";
 
 import {getContracts} from "../../../server/api/optionsScreener";
@@ -21,17 +21,15 @@ export function fetchExpirationTimestamps(symbol, headers) {
                     throw res.error;
                 }
 
-                const expirationTimestamps = await res.expiration_timestamps.map(
-                    (item, index) => {
-
+                const expirationTimestamps =
+                    await res.expiration_timestamps.map((item, index) => {
                         return {
                             label: date,
                             value: index,
                             expirationTimestamp: item,
                             checked: false,
                         };
-                    },
-                );
+                    });
 
                 const valid = validateBasicInfo(res.quote);
                 if (!valid) {
@@ -47,7 +45,15 @@ export function fetchExpirationTimestamps(symbol, headers) {
                 dispatch(fetchExpirationTimestampsSuccess(formatedResponse));
                 return res;
             })
-            .catch((error) => dispatch(fetchOptionsScreenerFail(`Error: ${error}; \n Symbol: ${JSON.stringify(symbol)}; \n Headers: ${JSON.stringify(headers)}; \n`)));
+            .catch((error) =>
+                dispatch(
+                    fetchOptionsScreenerFail(
+                        `Error: ${error}; \n Symbol: ${JSON.stringify(
+                            symbol,
+                        )}; \n Headers: ${JSON.stringify(headers)}; \n`,
+                    ),
+                ),
+            );
     };
 }
 
@@ -55,9 +61,10 @@ export function fetchOptions({headers, filters}) {
     return (dispatch) => {
         dispatch(fetchOptionsScreenerPending());
         dispatch(setOptionsFilters(filters));
-        const selectedExpirationTimestamp = filters.selectedExpirationTimestamp.map(
-            (item) => item.expirationTimestamp,
-        );
+        const selectedExpirationTimestamp =
+            filters.selectedExpirationTimestamp.map(
+                (item) => item.expirationTimestamp,
+            );
 
         return getContracts({
             filters: {...filters, selectedExpirationTimestamp},

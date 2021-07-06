@@ -1,12 +1,12 @@
 const fixedFloat = (x) => {
-    if(x) {
+    if (x) {
         return parseFloat(x.toFixed(2));
     }
     return null;
 };
 
 const priceFormatter = (num) => {
-    if(!num){
+    if (!num) {
         return `$${num}`;
     }
     return `$${fixedFloat(num)}`;

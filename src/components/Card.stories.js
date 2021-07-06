@@ -5,13 +5,11 @@ import Card from "./Card";
 import ContainerView from "./ContainerView";
 
 storiesOf("Card", module)
-    .addDecorator((getStory) => (
-        <ContainerView>{getStory()}</ContainerView>
-    ))
+    .addDecorator((getStory) => <ContainerView>{getStory()}</ContainerView>)
     .add("isn't touchable", () => (
-        <Card onPress={action("clicked-button")} isTouchable/>
+        <Card onPress={action("clicked-button")} isTouchable />
     ))
     .add("touchable", () => (
-        <Card onPress={action("clicked-button")} title={"Login"}/>
+        <Card onPress={action("clicked-button")} title={"Login"} />
     ))
-    .add("without properties", () => <Card/>);
+    .add("without properties", () => <Card />);

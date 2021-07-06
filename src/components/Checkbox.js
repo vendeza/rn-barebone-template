@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import {View} from "react-native";
 
 const CustomCheckbox = ({checked, setChecked, label}) => {
-    return (
-        <View style={{flex: 1}}>
-        </View>
-    );
+    return <View style={{flex: 1}}></View>;
 };
 
 CustomCheckbox.defaultProps = {

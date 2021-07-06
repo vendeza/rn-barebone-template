@@ -7,7 +7,6 @@ const SwitchCustom = ({labelText, value, onToggleSwitch}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>{labelText}</Text>
-
         </View>
     );
 };
@@ -15,8 +14,7 @@ const SwitchCustom = ({labelText, value, onToggleSwitch}) => {
 SwitchCustom.defaultProps = {
     labelText: "Label text",
     value: false,
-    onToggleSwitch: () => {
-    },
+    onToggleSwitch: () => {},
 };
 
 SwitchCustom.propTypes = {
@@ -32,15 +30,15 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop:10,
-        padding: 14
+        marginTop: 10,
+        padding: 14,
     },
     switch: {
         alignSelf: "flex-end",
     },
     text: {
         color: "#fff",
-        fontSize: 16
+        fontSize: 16,
     },
 });
 

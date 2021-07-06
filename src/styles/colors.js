@@ -1,7 +1,7 @@
 const colors = {
     white: "#fff",
-    faceBookColor:"#4267B2",
-    googleColor:"#F5F5F5",
+    faceBookColor: "#4267B2",
+    googleColor: "#F5F5F5",
     black: "#000",
     highestLightGray: "#E6E6EB",
     lightBlue: "#F2F2F7",
@@ -19,8 +19,8 @@ const colors = {
     skyBlue: "#5AC8FA",
     blue: "#007AFF",
     backgroundColor: "#F3F2F7",
-    alertBackground:"#ffd3d3",
-    alertText:"#6f1010",
-    alertIcon:"#f63939"
+    alertBackground: "#ffd3d3",
+    alertText: "#6f1010",
+    alertIcon: "#f63939",
 };
 export default colors;

@@ -10,9 +10,7 @@ import {
     setStrategyFilters,
 } from "./actions";
 import {getBestTradesArray} from "../../../server/api/strategyScreener";
-import {
-    getExpirationTimestampsArray,
-} from "../../../server/api/common";
+import {getExpirationTimestampsArray} from "../../../server/api/common";
 import {
     validateBasicInfo,
     validateBestTradesSchema,
@@ -33,17 +31,15 @@ export function fetchExpirationTimestamps(symbol, headers) {
                     throw res.error;
                 }
 
-                const expirationTimestamps = await res.expiration_timestamps.map(
-                    (item, index) => {
-
+                const expirationTimestamps =
+                    await res.expiration_timestamps.map((item, index) => {
                         return {
                             label: date,
                             value: index,
                             expirationTimestamp: item,
                             checked: false,
                         };
-                    },
-                );
+                    });
 
                 const valid = validateBasicInfo(res.quote);
                 if (!valid) {
@@ -78,9 +74,10 @@ export function saveSelectedExpirationTimestamp(expirationTimestamp) {
 export function fetchBestTrades({headers, filters}) {
     return (dispatch) => {
         dispatch(fetchBestTradesPending());
-        const selectedExpirationTimestamp = filters.selectedExpirationTimestamp.map(
-            (item) => item.expirationTimestamp,
-        );
+        const selectedExpirationTimestamp =
+            filters.selectedExpirationTimestamp.map(
+                (item) => item.expirationTimestamp,
+            );
         dispatch(setStrategyFilters(filters));
         return getBestTradesArray({
             headers,

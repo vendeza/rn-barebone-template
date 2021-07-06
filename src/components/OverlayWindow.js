@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
-import { View, StyleSheet } from "react-native";
-import { Button, Overlay, Text } from "react-native-elements";
+import {View, StyleSheet} from "react-native";
+import {Button, Overlay, Text} from "react-native-elements";
 import colors from "../styles/colors";
 
 const OverlayWindow = ({
@@ -12,7 +12,7 @@ const OverlayWindow = ({
     overlayStyle,
 }) => {
     return (
-        <View >
+        <View>
             <Overlay
                 animationType="fade"
                 transparent
@@ -23,24 +23,19 @@ const OverlayWindow = ({
                     ...styles.overlayContainer,
                     ...overlayStyle,
                 }}>
-                <View
-                    style={styles.header}>
-                    <Text
-                        style={styles.headerTitle}>
-                        {title}
-                    </Text>
+                <View style={styles.header}>
+                    <Text style={styles.headerTitle}>{title}</Text>
 
                     <Button
                         onPress={toggleOverlay}
-                        style={{ alignSelf: "flex-end" }}
+                        style={{alignSelf: "flex-end"}}
                         containerStyle={styles.containerButton}
                         type={"clear"}
                         title={"Cancel"}
                         titleStyle={styles.buttonTitle}
-
                     />
                 </View>
-                <View style={{ flex:1, paddingHorizontal: 16, paddingTop: 30 }}>
+                <View style={{flex: 1, paddingHorizontal: 16, paddingTop: 30}}>
                     {children}
                 </View>
             </Overlay>
@@ -54,7 +49,7 @@ OverlayWindow.defaultProps = {
     title: "Overlay title",
     visible: false,
     toggleOverlay: () => {},
-    overlayStyle:{}
+    overlayStyle: {},
 };
 
 OverlayWindow.propTypes = {
@@ -63,21 +58,21 @@ OverlayWindow.propTypes = {
     title: PropTypes.string,
     visible: PropTypes.bool,
     toggleOverlay: PropTypes.func,
-    overlayStyle:PropTypes.object
+    overlayStyle: PropTypes.object,
 };
 
 const styles = StyleSheet.create({
-    buttonTitle:{
+    buttonTitle: {
         color: colors.orange,
         fontWeight: "600",
     },
-    containerButton:{
+    containerButton: {
         height: 42,
         marginTop: 10,
         position: "absolute",
         right: 10,
     },
-    header:{
+    header: {
         alignContent: "center",
         backgroundColor: "#f9f9f9",
         borderBottomColor: "#999",
@@ -89,18 +84,18 @@ const styles = StyleSheet.create({
         padding: 10,
         paddingVertical: 20,
     },
-    headerTitle:{
+    headerTitle: {
         flex: 1,
         fontSize: 17,
         fontWeight: "600",
         textAlign: "center",
     },
-    overlayContainer:{
+    overlayContainer: {
         borderRadius: 10,
         marginTop: 80,
         padding: 0,
         width: "100%",
-    }
+    },
 });
 
 export default OverlayWindow;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View } from "react-native";
+import {View} from "react-native";
 
 class TextInputCustom extends React.PureComponent {
     focus() {
@@ -15,11 +15,7 @@ class TextInputCustom extends React.PureComponent {
     }
 
     render() {
-        return (
-            <View>
-
-            </View>
-        );
+        return <View></View>;
     }
 }
 
@@ -38,7 +34,7 @@ TextInputCustom.propTypes = {
     maxLength: PropTypes.number,
     error: PropTypes.string,
     placeholder: PropTypes.string,
-    label: PropTypes.string
+    label: PropTypes.string,
 };
 
 export default TextInputCustom;

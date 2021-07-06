@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import {
     StatusBar,
@@ -37,24 +37,24 @@ import BackButton from "./BackButton";
  * isBackButton: bool
  * */
 const ContainerViewWithHeader = (props) => {
-    const [state, setState] = useState({ scroll: new Animated.Value(0) });
+    const [state, setState] = useState({scroll: new Animated.Value(0)});
 
     useEffect(() => {
-        const { scroll } = state;
+        const {scroll} = state;
         if (props.isSticky) {
-            scroll.addListener(({ value }) => (this._value = value));
+            scroll.addListener(({value}) => (this._value = value));
         }
 
         return () => {
             /** Removing the Listener  */
-            const { scroll } = state;
+            const {scroll} = state;
             scroll.removeAllListeners();
         };
     }, []);
 
     /** For sticky header component (before scrolling) */
     const renderForeground = () => {
-        const { scroll } = state;
+        const {scroll} = state;
         const titleOpacity = scroll.interpolate({
             inputRange: [0, 0, 60],
             outputRange: [1, 1, 0],
@@ -63,10 +63,8 @@ const ContainerViewWithHeader = (props) => {
 
         return (
             <Animated.View
-                style={{ ...styles.foreground, opacity: titleOpacity }}>
-                <View style={{ paddingTop: 64 }}>
-                    {props.headerComponent()}
-                </View>
+                style={{...styles.foreground, opacity: titleOpacity}}>
+                <View style={{paddingTop: 64}}>{props.headerComponent()}</View>
             </Animated.View>
         );
     };
@@ -76,7 +74,7 @@ const ContainerViewWithHeader = (props) => {
     };
 
     const renderHeader = () => {
-        const { scroll } = state;
+        const {scroll} = state;
         const opacity = scroll.interpolate({
             inputRange: [0, 10, 40],
             outputRange: [0, 0, 1],
@@ -95,7 +93,7 @@ const ContainerViewWithHeader = (props) => {
                     }}>
                     <View>{renderBackButton()}</View>
 
-                    <Animated.View style={{ opacity, position: "relative" }}>
+                    <Animated.View style={{opacity, position: "relative"}}>
                         <View
                             style={{
                                 ...styles.headerWrapper,
@@ -141,8 +139,8 @@ const ContainerViewWithHeader = (props) => {
 
     const renderNotStickyContent = () => {
         return (
-            <View style={{ flex: 1 }}>
-                <View style={{ ...styles.foreground, height: 90 }}>
+            <View style={{flex: 1}}>
+                <View style={{...styles.foreground, height: 90}}>
                     <View>{renderBackButton()}</View>
                     <Text style={styles.h1}>{props.screenTitle}</Text>
                 </View>
@@ -191,7 +189,7 @@ const ContainerViewWithHeader = (props) => {
                             },
                         },
                     ],
-                    { useNativeDriver: false },
+                    {useNativeDriver: false},
                 )}>
                 {props.children}
             </StickyParallaxHeader>

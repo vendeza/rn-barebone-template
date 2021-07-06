@@ -4,9 +4,7 @@ import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
 import styles from "../StrategyScreener/styles";
 
-
 const OptionsScreener = (props) => {
-
     const onSearch = async () => {
         props.navigation.navigate("OptionsSelectStock");
     };

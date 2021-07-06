@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, View } from "react-native";
+import {StyleSheet, View} from "react-native";
 
-import { Autocomplete } from "./Autocomplete/";
+import {Autocomplete} from "./Autocomplete/";
 
 const AutocompleteCustom = ({
     keyboardIsShowed,
     dataArray,
     handleSelectListItem,
 }) => {
-
     const onDropdownClose = () => {};
     const onDropdownShow = () => {};
 
@@ -29,7 +28,7 @@ const AutocompleteCustom = ({
                         borderBottomWidth: keyboardIsShowed ? 1 : 0,
                     }}
                     handleSelectItem={(item, id) =>
-                        handleSelectListItem({ item, id })
+                        handleSelectListItem({item, id})
                     }
                     onDropdownClose={() => onDropdownClose()}
                     onDropdownShow={() => onDropdownShow()}
@@ -49,7 +48,7 @@ AutocompleteCustom.defaultProps = {
     onDropdownClose: () => {},
     scrollToInput: () => {},
     dataArray: ["Test 1", "Test 2", "Test 3"],
-    handleSelectListItem: ({ item, id }) => {},
+    handleSelectListItem: ({item, id}) => {},
     keyboardIsShowed: false,
 };
 

@@ -1,4 +1,3 @@
-
 import BackButton from "./BackButton";
 import ButtonCustom from "./ButtonCustom";
 import Card from "./Card";

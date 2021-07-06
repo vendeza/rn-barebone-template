@@ -7,11 +7,9 @@ import ContainerView from "../../components/ContainerView";
 const Stats = ({onPress, children, text}) => {
     return (
         <ContainerView>
-            <View style={{padding:20}}>
+            <View style={{padding: 20}}>
                 <Text style={commonStyles.h1}>{"Stats Screen"}</Text>
-                <Text style={commonStyles.p}>
-                    {"Build screen content"}
-                </Text>
+                <Text style={commonStyles.p}>{"Build screen content"}</Text>
             </View>
         </ContainerView>
     );
@@ -19,18 +17,16 @@ const Stats = ({onPress, children, text}) => {
 
 Stats.defaultProps = {
     children: null,
-    onPress: () => {
-    },
-    text: ""
+    onPress: () => {},
+    text: "",
 };
 
 Stats.propTypes = {
     children: PropTypes.node,
     onPress: PropTypes.func,
-    text: PropTypes.string
+    text: PropTypes.string,
 };
 
 const styles = StyleSheet.create({});
-
 
 export default Stats;

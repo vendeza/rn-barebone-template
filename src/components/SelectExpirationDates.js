@@ -8,18 +8,17 @@ import {Divider} from "react-native-elements";
 import {connect} from "react-redux";
 
 const SelectExpirationDates = ({
-                                   navigationToSearchResult,
-                                   expirationTimestamps,
-                                   fetchEntities,
-                                   basicInfo,
-                                   filters,
-                                   pending,
-                                   user,
-                                   error,
-                               }) => {
-    const [selectedExpirationDates, setSelectedExpirationDates] = useState(
-        expirationTimestamps,
-    );
+    navigationToSearchResult,
+    expirationTimestamps,
+    fetchEntities,
+    basicInfo,
+    filters,
+    pending,
+    user,
+    error,
+}) => {
+    const [selectedExpirationDates, setSelectedExpirationDates] =
+        useState(expirationTimestamps);
 
     const onSelectTimestamp = (item) => {
         let temp = [...selectedExpirationDates];
@@ -128,12 +127,12 @@ const SelectExpirationDates = ({
                         }}>
                         {"Select from available exp dates below"}
                     </Text>
-                    <Divider/>
+                    <Divider />
                     <ScrollView
                         style={{flex: 1, ...styles.searchFieldsContainer}}>
-                        <ExpirationDatesList/>
+                        <ExpirationDatesList />
                     </ScrollView>
-                    <SearchButton/>
+                    <SearchButton />
                 </View>
             </ContainerView>
 
@@ -143,7 +142,7 @@ const SelectExpirationDates = ({
                 textContent={"Loading..."}
                 textStyle={styles.spinnerTextStyle}
             />
-            <Error style={{marginBottom: 10}} error={error}/>
+            <Error style={{marginBottom: 10}} error={error} />
         </View>
     );
 };

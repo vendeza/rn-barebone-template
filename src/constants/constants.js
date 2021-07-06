@@ -1,6 +1,6 @@
-import { Dimensions, Platform } from "react-native";
+import {Dimensions, Platform} from "react-native";
 
-const { height, width } = Dimensions.get("window");
+const {height, width} = Dimensions.get("window");
 const responsiveHeight = (h) => height * (h / 100);
 const responsiveWidth = (w) => width * (w / 100);
 const breakpoints = {

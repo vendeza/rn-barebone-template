@@ -26,7 +26,7 @@ function userLoginSuccess(user) {
 
 function userLogoutSuccess() {
     return {
-        type: USER_LOGOUT_SUCCESS
+        type: USER_LOGOUT_SUCCESS,
     };
 }
 
@@ -47,5 +47,5 @@ export {
     fetchTickersFail,
     fetchTickersSuccess,
     userLoginSuccess,
-    userLogoutSuccess
+    userLogoutSuccess,
 };

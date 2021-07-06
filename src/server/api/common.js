@@ -1,5 +1,5 @@
 import axios from "axios";
-import {HOST,TOP_MOVERS} from "../configuration";
+import {HOST, TOP_MOVERS} from "../configuration";
 
 export async function getExpirationTimestampsArray(tickerName, headers) {
     const path = `${HOST}/tickers/${tickerName}/expire_dates/`;

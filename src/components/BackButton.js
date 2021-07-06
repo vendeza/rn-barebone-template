@@ -29,7 +29,7 @@ const BackButton = ({goBack, backButtonColor}) => {
 };
 
 BackButton.defaultProps = {
-    goBack: ()=>{},
+    goBack: () => {},
     backButtonColor: "#333",
 };
 

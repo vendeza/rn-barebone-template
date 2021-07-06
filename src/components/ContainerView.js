@@ -1,10 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-    StatusBar,
-    StyleSheet,
-    SafeAreaView,
-} from "react-native";
+import {StatusBar, StyleSheet, SafeAreaView} from "react-native";
 import commonStyles from "../styles/commonStyles";
 import colors from "../styles/colors";
 
@@ -42,9 +38,8 @@ const ContainerView = (props) => {
                         ? props.containerColor
                         : colors.backgroundColor,
                 }}>
-
-                    {props.header ? props.header() : null}
-                    {props.children}
+                {props.header ? props.header() : null}
+                {props.children}
             </SafeAreaView>
         </>
     );
@@ -62,8 +57,7 @@ ContainerView.defaultProps = {
     isBackButton: false,
     containerStyle: {},
     statusBarColor: "#fff",
-    isPadding:true,
-
+    isPadding: true,
 };
 
 ContainerView.propTypes = {
@@ -77,8 +71,8 @@ ContainerView.propTypes = {
     isStickyHeader: PropTypes.bool,
     isBackButton: PropTypes.bool,
     containerStyle: PropTypes.object,
-    isPadding:PropTypes.bool,
-    statusBarColor:PropTypes.string
+    isPadding: PropTypes.bool,
+    statusBarColor: PropTypes.string,
 };
 
 export default ContainerView;

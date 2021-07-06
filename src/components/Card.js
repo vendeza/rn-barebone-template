@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import {StyleSheet, TouchableOpacity} from "react-native";
 
-const Card = ({ children, onPress }) => {
+const Card = ({children, onPress}) => {
     return (
         <TouchableOpacity
             style={styles.position}

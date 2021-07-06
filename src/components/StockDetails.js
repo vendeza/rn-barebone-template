@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View, StyleSheet } from "react-native";
+import {Text, View, StyleSheet} from "react-native";
 import OverlayWindow from "./OverlayWindow";
 import CardField from "./CardField";
 
@@ -30,14 +30,14 @@ const StockDetails = ({
                         paddingHorizontal: 0,
                         backgroundColor: "#fff",
                     }}>
-                    <Text style={{ fontSize: 20 }}>
+                    <Text style={{fontSize: 20}}>
                         {selectedTicker ? selectedTicker.symbol : null}
                     </Text>
-                    <Text style={{ fontSize: 20 }}>
+                    <Text style={{fontSize: 20}}>
                         {selectedTicker ? selectedTicker.full_name : null}
                     </Text>
                     <View style={styles.positionValues}>
-                            {showCardFields()}
+                        {showCardFields()}
                     </View>
                 </View>
             </OverlayWindow>
@@ -46,24 +46,24 @@ const StockDetails = ({
 };
 
 StockDetails.defaultProps = {
-    selectedTicker:{},
-    visible:false,
-    toggleOverlay:()=>{},
-    stockDetails:[]
+    selectedTicker: {},
+    visible: false,
+    toggleOverlay: () => {},
+    stockDetails: [],
 };
 
 StockDetails.propTypes = {
-    selectedTicker:PropTypes.object,
-    visible:PropTypes.bool,
-    toggleOverlay:PropTypes.func,
-    stockDetails:PropTypes.array
+    selectedTicker: PropTypes.object,
+    visible: PropTypes.bool,
+    toggleOverlay: PropTypes.func,
+    stockDetails: PropTypes.array,
 };
 
 const styles = StyleSheet.create({
     positionValues: {
         flex: 1,
         flexDirection: "column",
-        marginTop:20,
+        marginTop: 20,
         padding: 5,
         paddingBottom: 10,
     },

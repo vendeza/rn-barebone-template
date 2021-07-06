@@ -1,10 +1,12 @@
 import React, {useState} from "react";
-import {Alert, Platform, View,Text} from "react-native";
-import { ContainerView } from "../../components";
+import {Alert, Platform, View, Text} from "react-native";
+import {ContainerView} from "../../components";
 
-const Login = () =>{
+const Login = () => {
     return (
-       <ContainerView><Text>{"Login Screen"}</Text></ContainerView>
+        <ContainerView>
+            <Text>{"Login Screen"}</Text>
+        </ContainerView>
     );
 };
 

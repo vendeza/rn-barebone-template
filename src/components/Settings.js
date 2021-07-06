@@ -31,9 +31,8 @@ const Settings = ({
 }) => {
     const [visibleTickersWindow, setVisibleTickersWindow] = useState(false);
     const [tempFiltersObj, setTempFiltersObj] = useState(filters); //selectedTicker and selected timestamp
-    const [expirationTimestampsArray, setExpirationTimestampsArray] = useState(
-        expirationTimestamps,
-    );
+    const [expirationTimestampsArray, setExpirationTimestampsArray] =
+        useState(expirationTimestamps);
     const [tempBasicInfo, setTempBasicInfo] = useState(basicInfo);
     const [tempTickerStats, setTempTickerStats] = useState({tickerStats});
 
@@ -71,15 +70,14 @@ const Settings = ({
         setTempFiltersObj({...tempFiltersObj, selectedTicker: item});
         await getExpirationTimestampsArray(item.symbol, {})
             .then(async (res) => {
-                const formattedExpirationTimestamps = await res.expiration_timestamps.map(
-                    (item, index) => {
+                const formattedExpirationTimestamps =
+                    await res.expiration_timestamps.map((item, index) => {
                         return {
                             label: date,
                             value: index,
                             expirationTimestamp: item,
                         };
-                    },
-                );
+                    });
                 setExpirationTimestampsArray(formattedExpirationTimestamps);
                 setTempBasicInfo(res.quote);
                 setTempTickerStats(res.ticker_stats);
@@ -130,7 +128,8 @@ const Settings = ({
                             tempBasicInfo,
                             tempTickerStats,
                             selectedTicker: tempFiltersObj.selectedTicker,
-                            selectedExpirationTimestamp: selectedExpirationTimestamp,
+                            selectedExpirationTimestamp:
+                                selectedExpirationTimestamp,
                         });
                     }}
                     isGradient

@@ -17,7 +17,15 @@ const Header = ({
                 ...styles.headerContainer,
                 ...containerStyle,
             }}>
-            {isBackButton ? <BackButton goBack={navigation && navigation.goBack ? navigation.goBack : ()=>{}} /> : null}
+            {isBackButton ? (
+                <BackButton
+                    goBack={
+                        navigation && navigation.goBack
+                            ? navigation.goBack
+                            : () => {}
+                    }
+                />
+            ) : null}
             {leftComponent}
             {centerComponent}
             {rightComponent}

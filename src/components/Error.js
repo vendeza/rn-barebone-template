@@ -1,8 +1,8 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import {StyleSheet, Text} from "react-native";
 import PropTypes from "prop-types";
 import colors from "../styles/colors";
-const Error = ({ error }) => {
+const Error = ({error}) => {
     if (!error) {
         return null;
     }

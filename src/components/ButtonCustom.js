@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
+import {StyleSheet} from "react-native";
 import colors from "../styles/colors";
-import { Button } from "react-native-elements";
+import {Button} from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 /** Simple button for any actions*/
@@ -16,8 +16,6 @@ const ButtonCustom = ({
     disabled,
     iconName,
 }) => {
-
-
     const gradient = isGradient;
 
     return (
@@ -25,18 +23,17 @@ const ButtonCustom = ({
             disabled={disabled}
             onPress={onPress}
             title={title}
-            titleStyle={{ ...styles.text, ...textStyle }}
-            buttonStyle={{ ...styles.buttonContainer, ...buttonStyle }}
+            titleStyle={{...styles.text, ...textStyle}}
+            buttonStyle={{...styles.buttonContainer, ...buttonStyle}}
             icon={
                 iconName ? (
                     <Icon
-                        style={{ position: "absolute", left: 20 }}
+                        style={{position: "absolute", left: 20}}
                         name={iconName}
                         size={26}
                         color={textStyle ? textStyle.color : "white"}
                     />
                 ) : null
-
             }
             {...gradient}
             {...passingProps}
@@ -71,7 +68,7 @@ ButtonCustom.propTypes = {
     buttonColor: PropTypes.string,
     isGradient: PropTypes.bool,
     disabled: PropTypes.bool,
-    iconName: PropTypes.string
+    iconName: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
