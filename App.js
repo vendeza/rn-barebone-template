@@ -18,7 +18,7 @@ import {connect} from "react-redux";
 import { userLogin} from "./src/screens/mainStore/dispatcher";
 import { fetchTickers } from "./src/screens/mainStore/dispatcher";
 import Spinner from "react-native-loading-spinner-overlay";
-import styles from "./src/screens/StrategyScreener/styles";
+import styles from "./src/screens/Home/styles";
 const MenuStackNavigator = createStackNavigator();
 const Screens = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,8 +30,8 @@ const screenOptions = (props) => ({
     let iconName;
 
     switch (props.route.name) {
-      case "Explore":
-        iconName = "explore";
+      case "Home":
+        iconName = "home";
         break;
       case "Stats":
         iconName = "insert-chart-outlined";
@@ -107,7 +107,7 @@ const TabsStackScreen = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name="Explore"
+        name="Home"
         component={ExploreScreens}
         options={{headerLeft: null}}
       />

@@ -2,9 +2,9 @@ import React from "react";
 import {Text, View} from "react-native";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
-import styles from "../StrategyScreener/styles";
+import styles from "../Home/styles";
 
-const OptionsScreener = (props) => {
+const Browse = (props) => {
     const onSearch = async () => {
         props.navigation.navigate("OptionsSelectStock");
     };
@@ -58,4 +58,4 @@ const OptionsScreener = (props) => {
     );
 };
 
-export default OptionsScreener;
+export default Browse;

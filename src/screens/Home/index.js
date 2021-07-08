@@ -4,7 +4,7 @@ import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
 
-const StrategyScreener = (props) => {
+const Home = (props) => {
     const onSearch = async () => {
         props.navigation.navigate("StrategySelectStock");
     };
@@ -28,11 +28,22 @@ const StrategyScreener = (props) => {
         <View style={{flex: 1}}>
             <ContainerView
                 statusBarColor={colors.orange2}
-                containerColor={colors.orange2}
+                containerColor={colors.white}
                 screenTitle={"Home"}>
                 <View
                     style={styles.searchFieldsContainer}
                     keyboardShouldPersistTaps="handled">
+                    <Text
+                        style={{
+                            fontSize: 26,
+                            fontWeight: "700",
+                            textAlign: "center",
+                            paddingHorizontal: 20,
+                            paddingVertical: 30,
+                            lineHeight: 26,
+                        }}>
+                        {"The perfect template to start your project"}
+                    </Text>
                     <Text
                         style={{
                             fontSize: 18,
@@ -52,4 +63,4 @@ const StrategyScreener = (props) => {
     );
 };
 
-export default StrategyScreener;
+export default Home;
