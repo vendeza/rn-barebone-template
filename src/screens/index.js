@@ -1,9 +1,9 @@
-import Stats from "./Stats";
-import Login from "./Login";
-import Menu from "./Menu";
-import Profile from "./Menu/Profile";
+import Mobilität from "./Mobilität";
+import Rewards from "./Rewards";
+import Mehr from "./Mehr";
+import Profile from "./Mehr/Profile";
 
-import StrategyScreener from "./StrategyScreener";
-import OptionsScreener from "./OptionsScreener";
+import Start from "./Start";
+import Challenges from "./Challenges";
 
-export {Stats, Login, Menu, Profile, StrategyScreener, OptionsScreener};
+export {Mobilität, Rewards, Mehr, Profile, Start, Challenges};

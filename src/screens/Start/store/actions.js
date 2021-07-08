@@ -22,13 +22,13 @@ function setStrategyFilters(data) {
     };
 }
 
-function fetchStrategyScreenerPending() {
+function fetchStartPending() {
     return {
         type: FETCH_STRATEGY_SCREENER_PENDING,
     };
 }
 
-function fetchStrategyScreenerFail(error) {
+function fetchStartFail(error) {
     return {
         type: FETCH_STRATEGY_SCREENER_FAIL,
         payload: error,
@@ -87,8 +87,8 @@ export {
     SELECT_STRATEGY_SCREENER_EXPIRATION_TIMESTAMPS,
     SAVE_STRATEGY_SCREENER_EXPIRATION_TIMESTAMPS,
     setStrategyFilters,
-    fetchStrategyScreenerPending,
-    fetchStrategyScreenerFail,
+    fetchStartPending,
+    fetchStartFail,
     fetchBestTradesPending,
     fetchBestTradesFail,
     fetchBestTradesSuccess,

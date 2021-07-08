@@ -7,10 +7,10 @@ import ButtonCustom from "../../components/ButtonCustom";
 import {bindActionCreators} from "redux";
 import {userLogout} from "../mainStore/dispatcher";
 import {connect} from "react-redux";
-const Menu = (props) => {
+const Mehr = (props) => {
     const logout = async () => {
         await props.userLogout();
-        props.navigation.navigate("Login");
+        props.navigation.navigate("Rewards");
     };
 
     const ShowButtons = () => {
@@ -37,9 +37,9 @@ const Menu = (props) => {
         return (
             <ButtonCustom
                 buttonStyle={{marginTop: 20}}
-                title={"Login"}
+                title={"Rewards"}
                 onPress={() => {
-                    props.navigation.navigate("Login");
+                    props.navigation.navigate("Rewards");
                 }}
             />
         );
@@ -47,20 +47,20 @@ const Menu = (props) => {
     return (
         <ContainerView>
             <View style={{flex: 1, padding: 20}}>
-                <Text style={commonStyles.h1}>{"Menu Screen"}</Text>
+                <Text style={commonStyles.h1}>{"Mehr Screen"}</Text>
                 <View>{ShowButtons()}</View>
             </View>
         </ContainerView>
     );
 };
-Menu.defaultProps = {
+Mehr.defaultProps = {
     children: null,
     onPress: () => {},
     text: "",
     authenticated: false,
 };
 
-Menu.propTypes = {
+Mehr.propTypes = {
     children: PropTypes.node,
     onPress: PropTypes.func,
     text: PropTypes.string,
@@ -82,4 +82,4 @@ const mapDispatchToProps = (dispatch) =>
         dispatch,
     );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Mehr);

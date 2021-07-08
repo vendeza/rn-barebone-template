@@ -3,8 +3,8 @@ import {
     fetchBestTradesPending,
     fetchBestTradesSuccess,
     fetchExpirationTimestampsSuccess,
-    fetchStrategyScreenerFail,
-    fetchStrategyScreenerPending,
+    fetchStartFail,
+    fetchStartPending,
     selectExpirationTimestamps,
     setExpirationTimestamps,
     setStrategyFilters,
@@ -24,7 +24,7 @@ export function saveStrategyFilters(filters) {
 
 export function fetchExpirationTimestamps(symbol, headers) {
     return (dispatch) => {
-        dispatch(fetchStrategyScreenerPending());
+        dispatch(fetchStartPending());
         return getExpirationTimestampsArray(symbol, headers)
             .then(async (res) => {
                 if (res.error) {
@@ -55,7 +55,7 @@ export function fetchExpirationTimestamps(symbol, headers) {
                 dispatch(fetchExpirationTimestampsSuccess(formatedResponse));
                 return res;
             })
-            .catch((error) => dispatch(fetchStrategyScreenerFail(error)));
+            .catch((error) => dispatch(fetchStartFail(error)));
     };
 }
 

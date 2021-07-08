@@ -6,6 +6,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    mainText: {
+        fontSize: 18,
+        textAlign: "center",
+        paddingHorizontal: 20,
+        paddingVertical: 30,
+        lineHeight: 26,
+    },
     contentContainer: {
         flex: 1,
     },
@@ -33,6 +40,7 @@ const styles = StyleSheet.create({
     },
     searchFieldsContainer: {
         flex: 1,
+        flexDirection: "row",
         backgroundColor: colors.white,
         padding: 20,
         paddingBottom: 40,

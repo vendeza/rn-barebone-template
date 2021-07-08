@@ -4,24 +4,24 @@ import {Text, View, StyleSheet} from "react-native";
 import commonStyles from "../../styles/commonStyles";
 import ContainerView from "../../components/ContainerView";
 
-const Stats = ({onPress, children, text}) => {
+const Mobilität = ({onPress, children, text}) => {
     return (
         <ContainerView>
             <View style={{padding: 20}}>
-                <Text style={commonStyles.h1}>{"Stats Screen"}</Text>
+                <Text style={commonStyles.h1}>{"Mobilität Screen"}</Text>
                 <Text style={commonStyles.p}>{"Build screen content"}</Text>
             </View>
         </ContainerView>
     );
 };
 
-Stats.defaultProps = {
+Mobilität.defaultProps = {
     children: null,
     onPress: () => {},
     text: "",
 };
 
-Stats.propTypes = {
+Mobilität.propTypes = {
     children: PropTypes.node,
     onPress: PropTypes.func,
     text: PropTypes.string,
@@ -29,4 +29,4 @@ Stats.propTypes = {
 
 const styles = StyleSheet.create({});
 
-export default Stats;
+export default Mobilität;

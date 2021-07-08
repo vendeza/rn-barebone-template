@@ -12,7 +12,7 @@ storiesOf("OverlayWindow", module)
             <OverlayWindow
                 visible={true}
                 onPress={action("clicked-button")}
-                title={"Login"}
+                title={"Rewards"}
             />
         </View>
     ))

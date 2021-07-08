@@ -10,6 +10,6 @@ storiesOf("Card", module)
         <Card onPress={action("clicked-button")} isTouchable />
     ))
     .add("touchable", () => (
-        <Card onPress={action("clicked-button")} title={"Login"} />
+        <Card onPress={action("clicked-button")} title={"Rewards"} />
     ))
     .add("without properties", () => <Card />);

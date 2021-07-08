@@ -5,11 +5,12 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {createStackNavigator} from "@react-navigation/stack";
 import {BackButton} from "./src/components";
 import {
-  Stats,
-  Menu,
-  OptionsScreener,
+  Mobilität,
+  Mehr,
+  Challenges,
   Profile,
-  StrategyScreener,
+  Start,
+  Rewards
 } from "./src/screens";
 import Icons from "react-native-vector-icons/MaterialIcons";
 import colors from "./src/styles/colors";
@@ -18,7 +19,7 @@ import {connect} from "react-redux";
 import { userLogin} from "./src/screens/mainStore/dispatcher";
 import { fetchTickers } from "./src/screens/mainStore/dispatcher";
 import Spinner from "react-native-loading-spinner-overlay";
-import styles from "./src/screens/StrategyScreener/styles";
+import styles from "./src/screens/Start/styles";
 const MenuStackNavigator = createStackNavigator();
 const Screens = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,17 +31,20 @@ const screenOptions = (props) => ({
     let iconName;
 
     switch (props.route.name) {
-      case "Explore":
-        iconName = "explore";
+      case "Start":
+        iconName = "home";
         break;
-      case "Stats":
-        iconName = "insert-chart-outlined";
+      case "Mobilität":
+        iconName = "speed";
         break;
-      case "Browse":
-        iconName = "search";
+      case "Challenges":
+        iconName = "emoji-events";
         break;
-      case "Menu":
-        iconName = "menu";
+      case "Rewards":
+        iconName = "redeem";
+        break;
+      case "Mehr":
+        iconName = "emoji-events";
         break;
       default:
         return;
@@ -75,7 +79,7 @@ const ExploreScreens = () => {
       <MenuStackNavigator.Screen
         options={{headerShown: false}}
         name="MainExplore"
-        component={StrategyScreener}
+        component={Start}
       />
     </Explore.Navigator>
   );
@@ -85,9 +89,9 @@ const BrowseScreens = () => {
   return (
     <Explore.Navigator screenOptions={navigatorOptions}>
       <MenuStackNavigator.Screen
-        options={{headerShown: false}}
-        name="OptionsScreener"
-        component={OptionsScreener}
+
+        name="Trip Details"
+        component={Challenges}
       />
 
     </Explore.Navigator>
@@ -97,7 +101,7 @@ const BrowseScreens = () => {
 const MenuScreens = () => {
   return (
     <MenuStackNavigator.Navigator screenOptions={{headerShown: false}}>
-      <MenuStackNavigator.Screen name="MainMenu" component={Menu} />
+      <MenuStackNavigator.Screen name="MainMenu" component={Mehr} />
       <MenuStackNavigator.Screen name="Profile" component={Profile} />
     </MenuStackNavigator.Navigator>
   );
@@ -107,17 +111,18 @@ const TabsStackScreen = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name="Explore"
+        name="Start"
         component={ExploreScreens}
         options={{headerLeft: null}}
       />
-      <Tab.Screen name="Stats" component={Stats} />
+      <Tab.Screen name="Mobilität" component={Mobilität} />
       <Tab.Screen
-        name="Browse"
+        name="Challenges"
         component={BrowseScreens}
-        options={{headerLeft: null}}
+        options={{title: 'Trip Details'}}
       />
-      <Tab.Screen name="Menu" component={MenuScreens} />
+      <Tab.Screen name="Rewards" screenOptions={{title: 'Trip Details'}} component={Rewards} />
+      <Tab.Screen name="Mehr" component={MenuScreens} />
     </Tab.Navigator>
   );
 };
@@ -156,7 +161,7 @@ const App = (props) => {
         }}
        >
         <Screens.Screen
-          name={"Login"}
+          name={"Rewards"}
           component={TabsStackScreen}
           options={{title: "", headerLeft: null}}
         />

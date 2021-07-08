@@ -10,7 +10,7 @@ storiesOf("TextInputCustom", module)
         <TextInputCustom
             placeholder={"First name"}
             onPress={action("clicked-button")}
-            title={"Login"}
+            title={"Rewards"}
         />
     ))
     .add("without properties", () => <TextInputCustom />);

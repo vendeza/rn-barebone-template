@@ -4,7 +4,7 @@ import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
 
-const StrategyScreener = (props) => {
+const Start = (props) => {
     const onSearch = async () => {
         props.navigation.navigate("StrategySelectStock");
     };
@@ -52,4 +52,4 @@ const StrategyScreener = (props) => {
     );
 };
 
-export default StrategyScreener;
+export default Start;
