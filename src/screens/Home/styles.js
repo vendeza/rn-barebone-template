@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     searchFieldsContainer: {
         flex: 1,
         backgroundColor: colors.white,
-        padding: 20,
         paddingBottom: 40,
         justifyContent: "center",
     },

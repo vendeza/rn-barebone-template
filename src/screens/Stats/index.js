@@ -7,7 +7,7 @@ import ContainerView from "../../components/ContainerView";
 const Stats = ({onPress, children, text}) => {
     return (
         <ContainerView>
-            <View style={{padding: 20}}>
+            <View>
                 <Text style={commonStyles.h1}>{"Stats Screen"}</Text>
                 <Text style={commonStyles.p}>{"Build screen content"}</Text>
             </View>

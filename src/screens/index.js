@@ -1,9 +1,9 @@
 import Stats from "./Stats";
-import Login from "./Login";
+import Login from "./Menu/Login";
 import Menu from "./Menu";
 import Profile from "./Menu/Profile";
 
-import StrategyScreener from "./Home";
-import OptionsScreener from "./Browse";
+import Home from "./Home";
+import Browse from "./Browse";
 
-export {Stats, Login, Menu, Profile, StrategyScreener, OptionsScreener};
+export {Stats, Login, Menu, Profile, Home, Browse};

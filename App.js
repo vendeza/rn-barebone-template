@@ -1,24 +1,18 @@
-import React, {useEffect, useState} from "react";
-import {SafeAreaView, Text, View} from "react-native";
-import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {createStackNavigator} from "@react-navigation/stack";
-import {BackButton} from "./src/components";
-import {
-  Stats,
-  Menu,
-  OptionsScreener,
-  Profile,
-  StrategyScreener,
-} from "./src/screens";
+import React from "react";
+import { SafeAreaView, View } from "react-native";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
+import { BackButton } from "./src/components";
+import { Browse, Home, Login, Menu, Profile, Stats } from "./src/screens";
 import Icons from "react-native-vector-icons/MaterialIcons";
 import colors from "./src/styles/colors";
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
-import { userLogin} from "./src/screens/mainStore/dispatcher";
-import { fetchTickers } from "./src/screens/mainStore/dispatcher";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { fetchTickers, userLogin } from "./src/screens/mainStore/dispatcher";
 import Spinner from "react-native-loading-spinner-overlay";
 import styles from "./src/screens/Home/styles";
+
 const MenuStackNavigator = createStackNavigator();
 const Screens = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,20 +20,20 @@ const Explore = createStackNavigator();
 
 const screenOptions = (props) => ({
   headerShown: false,
-  tabBarIcon: ({focused}) => {
+  tabBarIcon: ({ focused }) => {
     let iconName;
 
     switch (props.route.name) {
-      case "Home":
+      case "HomeScreens":
         iconName = "home";
         break;
-      case "Stats":
+      case "StatsScreens":
         iconName = "insert-chart-outlined";
         break;
-      case "Browse":
+      case "BrowseScreens":
         iconName = "search";
         break;
-      case "Menu":
+      case "MenuScreens":
         iconName = "menu";
         break;
       default:
@@ -60,23 +54,25 @@ const navigatorOptions = {
     height: 120,
   },
   headerTitleStyle: {
-    fontSize:18,
+    fontSize: 18,
     fontWeight: "bold",
   },
-  headerLeft: ({canGoBack, onPress}) =>
-    canGoBack && (
-      <BackButton goBack={onPress}/>
-    ),
+  headerLeft: ({ canGoBack, onPress }) =>
+    canGoBack && <BackButton goBack={onPress} />,
 };
 
-const ExploreScreens = () => {
+const HomeScreens = () => {
   return (
     <Explore.Navigator screenOptions={navigatorOptions}>
-      <MenuStackNavigator.Screen
-        options={{headerShown: false}}
-        name="MainExplore"
-        component={StrategyScreener}
-      />
+      <MenuStackNavigator.Screen name="Home" component={Home} />
+    </Explore.Navigator>
+  );
+};
+
+const StatsScreens = () => {
+  return (
+    <Explore.Navigator screenOptions={navigatorOptions}>
+      <MenuStackNavigator.Screen name="Stats" component={Stats} />
     </Explore.Navigator>
   );
 };
@@ -84,21 +80,17 @@ const ExploreScreens = () => {
 const BrowseScreens = () => {
   return (
     <Explore.Navigator screenOptions={navigatorOptions}>
-      <MenuStackNavigator.Screen
-        options={{headerShown: false}}
-        name="OptionsScreener"
-        component={OptionsScreener}
-      />
-
+      <MenuStackNavigator.Screen name="Browse" component={Browse} />
     </Explore.Navigator>
   );
 };
 
 const MenuScreens = () => {
   return (
-    <MenuStackNavigator.Navigator screenOptions={{headerShown: false}}>
-      <MenuStackNavigator.Screen name="MainMenu" component={Menu} />
+    <MenuStackNavigator.Navigator screenOptions={navigatorOptions}>
+      <MenuStackNavigator.Screen name="Menu" component={Menu} />
       <MenuStackNavigator.Screen name="Profile" component={Profile} />
+      <MenuStackNavigator.Screen name="Login" component={Login} />
     </MenuStackNavigator.Navigator>
   );
 };
@@ -107,17 +99,25 @@ const TabsStackScreen = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name="Home"
-        component={ExploreScreens}
-        options={{headerLeft: null}}
+        name="HomeScreens"
+        component={HomeScreens}
+        options={{ title: "Home" }}
       />
-      <Tab.Screen name="Stats" component={Stats} />
       <Tab.Screen
-        name="Browse"
-        component={BrowseScreens}
-        options={{headerLeft: null}}
+        options={{ title: "Stats" }}
+        name="StatsScreens"
+        component={StatsScreens}
       />
-      <Tab.Screen name="Menu" component={MenuScreens} />
+      <Tab.Screen
+        options={{ title: "Browse" }}
+        name="BrowseScreens"
+        component={BrowseScreens}
+      />
+      <Tab.Screen
+        options={{ title: "Menu" }}
+        name="MenuScreens"
+        component={MenuScreens}
+      />
     </Tab.Navigator>
   );
 };
@@ -132,12 +132,17 @@ const MyTheme = {
 };
 
 const App = (props) => {
-
-
   if (props.pending) {
     return (
       <SafeAreaView>
-        <View style={{width:"100%", height:"100%", flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
+        <View
+          style={{
+            width: "100%",
+            height: "100%",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
           <Spinner
             visible={props.pending}
             textContent={"Loading..."}
@@ -150,20 +155,11 @@ const App = (props) => {
 
   return (
     <NavigationContainer theme={MyTheme}>
-      <Screens.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-       >
+      <Screens.Navigator screenOptions={{ headerShown: false }}>
         <Screens.Screen
-          name={"Login"}
+          name={"Main"}
           component={TabsStackScreen}
-          options={{title: "", headerLeft: null}}
-        />
-
-        <Screens.Screen
-          name={"Tigerstance"}
-          component={TabsStackScreen}
+          options={{ headerLeft: null }}
         />
       </Screens.Navigator>
     </NavigationContainer>
@@ -171,7 +167,7 @@ const App = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const {mainReducer} = state;
+  const { mainReducer } = state;
   return {
     pending: mainReducer.pending,
     tickers: mainReducer.tickers,
@@ -183,12 +179,9 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       userLogin: userLogin,
-      fetchTickers: fetchTickers
+      fetchTickers: fetchTickers,
     },
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

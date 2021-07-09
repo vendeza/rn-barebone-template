@@ -6,7 +6,7 @@ import colors from "../../styles/colors";
 
 const Home = (props) => {
     const onSearch = async () => {
-        props.navigation.navigate("StrategySelectStock");
+        props.navigation.navigate("Browse");
     };
 
     const GetStartedButton = () => {
@@ -26,10 +26,7 @@ const Home = (props) => {
 
     return (
         <View style={{flex: 1}}>
-            <ContainerView
-                statusBarColor={colors.orange2}
-                containerColor={colors.white}
-                screenTitle={"Home"}>
+            <ContainerView>
                 <View
                     style={styles.searchFieldsContainer}
                     keyboardShouldPersistTaps="handled">

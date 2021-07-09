@@ -64,10 +64,9 @@ const commonStyles = StyleSheet.create({
     mainContainer: {
         backgroundColor: colors.backgroundColor,
         flex: 1,
-        flexDirection: "column",
         height: "100%",
         padding: Platform.OS === "android" ? 0 : 20,
-        paddingTop: Platform.OS === "android" ? 50 : 0,
+        paddingTop: Platform.OS === "android" ? 50 :20,
     },
 
     orangeIconContainer: {

@@ -1,36 +1,12 @@
 import React from "react";
 import {Text, View} from "react-native";
-import {ButtonCustom, ContainerView} from "../../components";
-import colors from "../../styles/colors";
+import {ContainerView} from "../../components";
 import styles from "../Home/styles";
 
-const Browse = (props) => {
-    const onSearch = async () => {
-        props.navigation.navigate("OptionsSelectStock");
-    };
-
-    const GetStartedButton = () => {
-        return (
-            <ButtonCustom
-                buttonStyle={{
-                    marginTop: 20,
-                    backgroundColor: colors.black,
-                }}
-                title={"Get Started"}
-                onPress={() => {
-                    onSearch();
-                }}
-            />
-        );
-    };
-
+const Browse = () => {
     return (
         <View style={{flex: 1}}>
-            <ContainerView
-                statusBarColor={colors.orange2}
-                containerColor={colors.orange2}
-                screenTitle={"Home"}
-                containerStyle={{padding: 0}}>
+            <ContainerView>
                 <View
                     style={{
                         ...styles.container,
@@ -50,7 +26,6 @@ const Browse = (props) => {
                                 "elit, sed do eiusmod tempor incididunt ut labore. Let’s help find the strategy " +
                                 "that works best for you."}
                         </Text>
-                        <GetStartedButton />
                     </View>
                 </View>
             </ContainerView>

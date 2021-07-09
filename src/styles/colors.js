@@ -18,7 +18,7 @@ const colors = {
     yellow: "#FFD43A",
     skyBlue: "#5AC8FA",
     blue: "#007AFF",
-    backgroundColor: "#F3F2F7",
+    backgroundColor: "#fff",
     alertBackground: "#ffd3d3",
     alertText: "#6f1010",
     alertIcon: "#f63939",
