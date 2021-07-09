@@ -18,24 +18,7 @@ import StickyParallaxHeader from "../components/StickyParallaxHeader";
 import Icon from "react-native-vector-icons/Feather";
 import BackButton from "./BackButton";
 
-/** FOR WRAPPING A SCREEN:
- *
- * children: node
- *
- * screenTitle: string
- *
- * onDataRefresh: func
- *
- * refreshing: bool
- *
- * pending: bool
- *
- * containerColor: string
- *
- * isStickyHeader: bool
- *
- * isBackButton: bool
- * */
+
 const ContainerViewWithHeader = (props) => {
     const [state, setState] = useState({scroll: new Animated.Value(0)});
 
