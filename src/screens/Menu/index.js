@@ -4,7 +4,7 @@ import {Text, View} from "react-native";
 import commonStyles from "../../styles/commonStyles";
 import ContainerView from "../../components/ContainerView";
 import {bindActionCreators} from "redux";
-import {userLogout} from "../mainStore/dispatcher";
+import {userLogout} from "../mainStore/fetchers";
 import {connect} from "react-redux";
 import ButtonCustom from "../../components/ButtonCustom";
 
@@ -15,13 +15,7 @@ const Menu = (props) => {
             <View style={{flex: 1}}>
                 <Text style={commonStyles.h1}>{"Menu Screen"}</Text>
                 <View>
-                    <ButtonCustom
-                      buttonStyle={{marginTop: 20}}
-                      title={"Profile"}
-                      onPress={() => {
-                          props.navigation.navigate("Profile");
-                      }}
-                    />
+
                     <ButtonCustom
                         buttonStyle={{marginTop: 20}}
                         title={"Login"}
@@ -51,7 +45,7 @@ Menu.propTypes = {
 const mapStateToProps = (state) => {
     const {mainReducer} = state;
     return {
-        authenticated: mainReducer.user.authenticated,
+        userName: mainReducer.user.name,
     };
 };
 

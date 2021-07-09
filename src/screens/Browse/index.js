@@ -2,8 +2,11 @@ import React from "react";
 import {Text, View} from "react-native";
 import {ContainerView} from "../../components";
 import styles from "../Home/styles";
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {getCars} from "../../server/api/cars";
 
-const Browse = () => {
+const Browse = (props) => {
     return (
         <View style={{flex: 1}}>
             <ContainerView>
@@ -33,4 +36,20 @@ const Browse = () => {
     );
 };
 
-export default Browse;
+const mapStateToProps = (state) => {
+    const {browseReducer} = state;
+    return {
+      exampleValue: browseReducer.exampleValue,
+    };
+};
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      getCars: getCars,
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Browse);
+

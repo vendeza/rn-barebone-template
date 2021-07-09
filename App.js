@@ -4,12 +4,11 @@ import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { BackButton } from "./src/components";
-import { Browse, Home, Login, Menu, Profile, Stats } from "./src/screens";
+import { Browse, Home, Login, Menu } from "./src/screens";
 import Icons from "react-native-vector-icons/MaterialIcons";
 import colors from "./src/styles/colors";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { fetchTickers, userLogin } from "./src/screens/mainStore/dispatcher";
 import Spinner from "react-native-loading-spinner-overlay";
 import styles from "./src/screens/Home/styles";
 
@@ -26,9 +25,6 @@ const screenOptions = (props) => ({
     switch (props.route.name) {
       case "HomeScreens":
         iconName = "home";
-        break;
-      case "StatsScreens":
-        iconName = "insert-chart-outlined";
         break;
       case "BrowseScreens":
         iconName = "search";
@@ -69,13 +65,6 @@ const HomeScreens = () => {
   );
 };
 
-const StatsScreens = () => {
-  return (
-    <Explore.Navigator screenOptions={navigatorOptions}>
-      <MenuStackNavigator.Screen name="Stats" component={Stats} />
-    </Explore.Navigator>
-  );
-};
 
 const BrowseScreens = () => {
   return (
@@ -89,7 +78,6 @@ const MenuScreens = () => {
   return (
     <MenuStackNavigator.Navigator screenOptions={navigatorOptions}>
       <MenuStackNavigator.Screen name="Menu" component={Menu} />
-      <MenuStackNavigator.Screen name="Profile" component={Profile} />
       <MenuStackNavigator.Screen name="Login" component={Login} />
     </MenuStackNavigator.Navigator>
   );
@@ -103,11 +91,7 @@ const TabsStackScreen = () => {
         component={HomeScreens}
         options={{ title: "Home" }}
       />
-      <Tab.Screen
-        options={{ title: "Stats" }}
-        name="StatsScreens"
-        component={StatsScreens}
-      />
+
       <Tab.Screen
         options={{ title: "Browse" }}
         name="BrowseScreens"
@@ -170,17 +154,12 @@ const mapStateToProps = (state) => {
   const { mainReducer } = state;
   return {
     pending: mainReducer.pending,
-    tickers: mainReducer.tickers,
-    expirationTimestamps: mainReducer.error,
   };
 };
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
-    {
-      userLogin: userLogin,
-      fetchTickers: fetchTickers,
-    },
+    {},
     dispatch,
   );
 

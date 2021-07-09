@@ -1,53 +1,31 @@
 import {
-    SET_OPTIONS_SCREENER_FILTERS,
-    FETCH_OPTIONS_SCREENER_FAIL,
-    FETCH_OPTIONS_SCREENER_PENDING,
-    FETCH_OPTIONS_SUCCESS,
-    FETCH_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS_SUCCESS,
-    SELECT_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS,
-    SAVE_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS,
+    FETCH_BROWSE_FAIL,
+    FETCH_BROWSE_PENDING,
+    FETCH_BROWSE_SUCCESS,
 } from "./actions";
 
 const initialState = {
-    expirationTimestamps: [],
-    basicInfo: {},
-    tickersStats: {},
+    user: {name: "", email: ""},
     pending: false,
-    fetchBestTradesPending: false,
     error: null,
-    options: [],
+    cars: [],
+    exampleValue: 123,
     filters: {
-        callToggle: true,
-        putToggle: true,
-        minStrike: 0,
-        maxStrike: 0,
-        minVolume: 0,
-        minOpenInterest: 0,
-        maxBidAskSpread: 99999,
-        delta: 1,
-        lastTradedDate: -9999999,
-        selectedTicker: {symbol: ""},
-        selectedExpirationTimestamp: [],
+        ids: [],
+        price: null,
     },
 };
 
-export function optionsScreenerReducer(state = initialState, action) {
+export function browseReducer(state = initialState, action) {
     switch (action.type) {
-        case SET_OPTIONS_SCREENER_FILTERS: {
-            return {
-                ...state,
-                filters: action.payload,
-            };
-        }
-
-        case FETCH_OPTIONS_SCREENER_PENDING: {
+        case FETCH_BROWSE_PENDING: {
             return {
                 ...state,
                 pending: true,
             };
         }
 
-        case FETCH_OPTIONS_SCREENER_FAIL: {
+        case FETCH_BROWSE_FAIL: {
             return {
                 ...state,
                 pending: false,
@@ -55,47 +33,12 @@ export function optionsScreenerReducer(state = initialState, action) {
             };
         }
 
-        /**
-         * OPTIONS
-         * */
-
-        case FETCH_OPTIONS_SUCCESS:
+        case FETCH_BROWSE_SUCCESS:
             return {
                 ...state,
                 pending: false,
-                options: action.payload,
+                exampleValue: action.payload,
             };
-
-        /**
-         * EXPIRATION TIMESTAMPS
-         * */
-
-        case FETCH_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS_SUCCESS: {
-            return {
-                ...state,
-                pending: false,
-                error: null,
-                expirationTimestamps: action.payload.expirationTimestamps,
-                basicInfo: action.payload.quote,
-                tickersStats: action.payload.tickerStats,
-            };
-        }
-
-        case SELECT_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS: {
-            return {
-                ...state,
-                selectedExpirationTimestamp: action.payload,
-            };
-        }
-
-        case SAVE_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS: {
-            return {
-                ...state,
-                expirationTimestamps: action.payload.expirationTimestamps,
-                basicInfo: action.payload.basicInfo,
-                tickersStats: action.payload.tickersStats,
-            };
-        }
 
         default: {
             return state;

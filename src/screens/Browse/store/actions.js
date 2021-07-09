@@ -1,77 +1,32 @@
-const SET_OPTIONS_SCREENER_FILTERS = "SET_OPTIONS_SCREENER_FILTERS";
+const FETCH_BROWSE_PENDING = "FETCH_BROWSE_PENDING";
+const FETCH_BROWSE_SUCCESS = "FETCH_BROWSE_SUCCESS";
+const FETCH_BROWSE_FAIL = "FETCH_BROWSE_FAIL";
 
-const FETCH_OPTIONS_SCREENER_PENDING = "FETCH_OPTIONS_SCREENER_PENDING";
-const FETCH_OPTIONS_SUCCESS = "FETCH_OPTIONS_SUCCESS";
-const FETCH_OPTIONS_SCREENER_FAIL = "FETCH_OPTIONS_SCREENER_FAIL";
-
-const FETCH_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS_SUCCESS =
-    "FETCH_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS_SUCCESS";
-const SELECT_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS =
-    "SELECT_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS";
-const SAVE_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS =
-    "SAVE_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS";
-
-function setOptionsFilters(data) {
+function fetchBrowsePending() {
     return {
-        type: SET_OPTIONS_SCREENER_FILTERS,
-        payload: data,
+        type: FETCH_BROWSE_PENDING,
     };
 }
 
-function fetchOptionsScreenerPending() {
+function fetchBrowseFail(error) {
     return {
-        type: FETCH_OPTIONS_SCREENER_PENDING,
-    };
-}
-
-function fetchOptionsScreenerFail(error) {
-    return {
-        type: FETCH_OPTIONS_SCREENER_FAIL,
+        type: FETCH_BROWSE_FAIL,
         payload: error,
     };
 }
 
-function fetchOptionsSuccess(data) {
+function fetchBrowseSuccess(data) {
     return {
-        type: FETCH_OPTIONS_SUCCESS,
-        payload: data,
-    };
-}
-
-function fetchExpirationTimestampsSuccess(data) {
-    return {
-        type: FETCH_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS_SUCCESS,
-        payload: data,
-    };
-}
-
-function selectExpirationTimestamps(data) {
-    return {
-        type: SELECT_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS,
-        payload: data,
-    };
-}
-
-function setExpirationTimestamps(data) {
-    return {
-        type: SAVE_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS,
+        type: FETCH_BROWSE_SUCCESS,
         payload: data,
     };
 }
 
 export {
-    SET_OPTIONS_SCREENER_FILTERS,
-    FETCH_OPTIONS_SCREENER_PENDING,
-    FETCH_OPTIONS_SCREENER_FAIL,
-    FETCH_OPTIONS_SUCCESS,
-    FETCH_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS_SUCCESS,
-    SELECT_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS,
-    SAVE_OPTIONS_SCREENER_EXPIRATION_TIMESTAMPS,
-    setOptionsFilters,
-    fetchOptionsScreenerPending,
-    fetchOptionsScreenerFail,
-    fetchOptionsSuccess,
-    fetchExpirationTimestampsSuccess,
-    selectExpirationTimestamps,
-    setExpirationTimestamps,
+    fetchBrowsePending,
+    fetchBrowseFail,
+    fetchBrowseSuccess,
+    FETCH_BROWSE_PENDING,
+    FETCH_BROWSE_SUCCESS,
+    FETCH_BROWSE_FAIL,
 };

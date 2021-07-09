@@ -3,6 +3,9 @@ import {Text, View} from "react-native";
 import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { userLogout } from "../mainStore/fetchers";
 
 const Home = (props) => {
     const onSearch = async () => {
@@ -59,5 +62,20 @@ const Home = (props) => {
         </View>
     );
 };
+const mapStateToProps = (state) => {
+  const {mainReducer} = state;
+  return {
+    userName: mainReducer.user.name,
+  };
+};
 
-export default Home;
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      userLogout: userLogout,
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+

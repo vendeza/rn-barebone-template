@@ -23,7 +23,6 @@ const signUpUser = (data) => {
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            Authorization: `SSWS ${config.oidc.apiToken}`,
         },
     });
 };
