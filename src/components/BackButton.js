@@ -34,6 +34,7 @@ BackButton.defaultProps = {
 };
 
 BackButton.propTypes = {
+    title: PropTypes.string,
     goBack: PropTypes.any.isRequired,
     backButtonColor: PropTypes.string,
 };

@@ -16,10 +16,8 @@ export function fetchBrowse() {
                     throw response.error;
                 }
 
-                const options = response;
-
-                dispatch(fetchBrowseSuccess(options));
-                return options;
+                dispatch(fetchBrowseSuccess(response));
+                return response;
             })
             .catch((error) => dispatch(fetchBrowseFail(error)));
     };

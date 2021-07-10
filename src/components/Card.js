@@ -26,12 +26,11 @@ Card.propTypes = {
 
 const styles = StyleSheet.create({
     position: {
+        padding: 20,
         backgroundColor: "#fff",
         borderRadius: 14,
         elevation: 9,
-        height: "100%",
         marginTop: 16,
-        margin: 10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,

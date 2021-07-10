@@ -12,10 +12,8 @@ export function fetchHome() {
                     throw response.error;
                 }
 
-                const options = response;
-
-                dispatch(fetchHomeSuccess(options));
-                return options;
+                dispatch(fetchHomeSuccess(response));
+                return response;
             })
             .catch((error) => dispatch(fetchHomeFail(error)));
     };

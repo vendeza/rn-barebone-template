@@ -25,8 +25,10 @@ const commonStyles = StyleSheet.create({
     },
     h3: {
         fontSize: 18,
+        lineHeight: 24,
         fontWeight: Platform.OS === "android" ? "700" : "600",
         marginBottom: 10,
+        marginTop:10,
     },
     h4: {
         color: colors.lightGray,
@@ -38,7 +40,7 @@ const commonStyles = StyleSheet.create({
     p: {
         color: colors.lightGray,
         fontSize: 18,
-        lineHeight: 22,
+        lineHeight: 26,
     },
     blueIconContainer: {
         ...iconContainer,

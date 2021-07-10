@@ -26,8 +26,7 @@ CardField.propTypes = {
 const styles = StyleSheet.create({
     cell: {
         flexDirection: "row",
-        height: 50,
-        marginTop: 0,
+        marginTop: 10,
     },
 
     label: {
