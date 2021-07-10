@@ -12,7 +12,7 @@ const ContainerView = (props) => {
                 barStyle={"dark-content"}
                 translucent
             />
-            <SafeAreaView style={{flex:1}}>
+            <SafeAreaView style={{flex: 1}}>
                 <View
                     style={{
                         ...commonStyles.mainContainer,

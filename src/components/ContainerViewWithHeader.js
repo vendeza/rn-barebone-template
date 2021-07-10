@@ -18,7 +18,6 @@ import StickyParallaxHeader from "../components/StickyParallaxHeader";
 import Icon from "react-native-vector-icons/Feather";
 import BackButton from "./BackButton";
 
-
 const ContainerViewWithHeader = (props) => {
     const [state, setState] = useState({scroll: new Animated.Value(0)});
 

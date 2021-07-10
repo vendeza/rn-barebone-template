@@ -3,9 +3,10 @@ import {Text, View} from "react-native";
 import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { userLogout } from "../mainStore/fetchers";
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {userLogout} from "../mainStore/fetchers";
+import commonStyles from "../../styles/commonStyles";
 
 const Home = (props) => {
     const onSearch = async () => {
@@ -30,28 +31,11 @@ const Home = (props) => {
     return (
         <View style={{flex: 1}}>
             <ContainerView>
-                <View
-                    style={styles.searchFieldsContainer}
-                    keyboardShouldPersistTaps="handled">
-                    <Text
-                        style={{
-                            fontSize: 26,
-                            fontWeight: "700",
-                            textAlign: "center",
-                            paddingHorizontal: 20,
-                            paddingVertical: 30,
-                            lineHeight: 26,
-                        }}>
+                <View style={styles.searchFieldsContainer}>
+                    <Text style={commonStyles.h1}>
                         {"The perfect template to start your project"}
                     </Text>
-                    <Text
-                        style={{
-                            fontSize: 18,
-                            textAlign: "center",
-                            paddingHorizontal: 20,
-                            paddingVertical: 30,
-                            lineHeight: 26,
-                        }}>
+                    <Text style={commonStyles.p}>
                         {"Our algorithms help to lorem ipsum dolor sit amet, consectetur adipiscing " +
                             "elit, sed do eiusmod tempor incididunt ut labore. Let’s help find the strategy " +
                             "that works best for you."}
@@ -63,19 +47,18 @@ const Home = (props) => {
     );
 };
 const mapStateToProps = (state) => {
-  const {mainReducer} = state;
-  return {
-    userName: mainReducer.user.name,
-  };
+    const {mainReducer} = state;
+    return {
+        userName: mainReducer.user.name,
+    };
 };
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      userLogout: userLogout,
-    },
-    dispatch,
-  );
+    bindActionCreators(
+        {
+            userLogout: userLogout,
+        },
+        dispatch,
+    );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-

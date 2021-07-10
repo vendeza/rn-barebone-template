@@ -10,23 +10,6 @@ const iconContainer = {
 };
 
 const commonStyles = StyleSheet.create({
-    blueIconContainer: {
-        ...iconContainer,
-        backgroundColor: colors.blue,
-    },
-    breakRow: {
-        flexBasis: "100%",
-        height: 0,
-    },
-    container: {
-        flex: 1,
-        flexDirection: "column",
-    },
-    greenIconContainer: {
-        ...iconContainer,
-        backgroundColor: colors.green,
-    },
-
     h1: {
         color: colors.black,
         fontSize: 28,
@@ -52,6 +35,27 @@ const commonStyles = StyleSheet.create({
         lineHeight: 18,
         marginBottom: 10,
     },
+    p: {
+        color: colors.lightGray,
+        fontSize: 18,
+        lineHeight: 22,
+    },
+    blueIconContainer: {
+        ...iconContainer,
+        backgroundColor: colors.blue,
+    },
+    breakRow: {
+        flexBasis: "100%",
+        height: 0,
+    },
+    container: {
+        flex: 1,
+        flexDirection: "column",
+    },
+    greenIconContainer: {
+        ...iconContainer,
+        backgroundColor: colors.green,
+    },
     iconContainer: {
         ...iconContainer,
     },
@@ -66,18 +70,14 @@ const commonStyles = StyleSheet.create({
         flex: 1,
         height: "100%",
         padding: Platform.OS === "android" ? 0 : 20,
-        paddingTop: Platform.OS === "android" ? 50 :20,
+        paddingTop: Platform.OS === "android" ? 50 : 20,
     },
 
     orangeIconContainer: {
         ...iconContainer,
         backgroundColor: colors.orange,
     },
-    p: {
-        color: colors.lightGray,
-        fontSize: 14,
-        lineHeight: 18,
-    },
+
     redIconContainer: {
         ...iconContainer,
         backgroundColor: colors.stoutRed,

@@ -7,7 +7,7 @@ import {
 } from "./actions";
 
 const initialState = {
-    user:{name: "Best User"},
+    user: {name: "Best User"},
     exampleValue: 123,
     pending: false,
     error: null,

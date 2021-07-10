@@ -24,4 +24,3 @@ export function fetchBrowse() {
             .catch((error) => dispatch(fetchBrowseFail(error)));
     };
 }
-

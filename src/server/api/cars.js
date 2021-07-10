@@ -1,7 +1,7 @@
 import axios from "axios";
-import { TOP_CARS } from "../endPoints";
+import {TOP_CARS} from "../endPoints";
 
-const getCars = async ({ filters }) => {
+const getCars = async ({filters}) => {
     let url = `${TOP_CARS}?filters=${filters}`;
 
     try {
@@ -12,7 +12,7 @@ const getCars = async ({ filters }) => {
     }
 };
 
-const getCarById = async ({ id }) => {
+const getCarById = async ({id}) => {
     let url = `${TOP_CARS}?id=${id}`;
 
     try {
@@ -23,4 +23,4 @@ const getCarById = async ({ id }) => {
     }
 };
 
-export { getCars, getCarById };
+export {getCars, getCarById};

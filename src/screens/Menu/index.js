@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Text, View} from "react-native";
+import {Text} from "react-native";
 import commonStyles from "../../styles/commonStyles";
 import ContainerView from "../../components/ContainerView";
 import {bindActionCreators} from "redux";
@@ -9,22 +9,17 @@ import {connect} from "react-redux";
 import ButtonCustom from "../../components/ButtonCustom";
 
 const Menu = (props) => {
-
     return (
         <ContainerView>
-            <View style={{flex: 1}}>
-                <Text style={commonStyles.h1}>{"Menu Screen"}</Text>
-                <View>
+            <Text style={commonStyles.h1}>{"Menu Screen"}</Text>
 
-                    <ButtonCustom
-                        buttonStyle={{marginTop: 20}}
-                        title={"Login"}
-                        onPress={() => {
-                            props.navigation.navigate("Login");
-                        }}
-                    />
-                </View>
-            </View>
+            <ButtonCustom
+                buttonStyle={{marginTop: 20}}
+                title={"Login"}
+                onPress={() => {
+                    props.navigation.navigate("Login");
+                }}
+            />
         </ContainerView>
     );
 };

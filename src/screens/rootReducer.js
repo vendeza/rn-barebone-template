@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
-import { homeReducer } from "./Home/store/reducer";
-import { browseReducer } from "./Browse/store/reducer";
-import { mainReducer } from "./mainStore/reducer";
+import {combineReducers} from "redux";
+import {homeReducer} from "./Home/store/reducer";
+import {browseReducer} from "./Browse/store/reducer";
+import {mainReducer} from "./mainStore/reducer";
 
 const appReducer = combineReducers({
     homeReducer,
