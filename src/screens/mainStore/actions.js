@@ -1,19 +1,12 @@
 const PENDING = "PENDING";
-const FETCH_TICKERS_SUCCESS = "FETCH_TICKERS_SUCCESS";
-const FETCH_TICKERS_FAIL = "FETCH_FAIL";
 const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
 const USER_LOGOUT_SUCCESS = "USER_LOGOUT_SUCCESS";
+const FETCH_CARS_FAIL = "FETCH_CARS_FAIL";
+const FETCH_CARS_SUCCESS = "FETCH_CARS_SUCCESS";
 
 function pending() {
     return {
         type: PENDING,
-    };
-}
-
-function fetchTickersFail(error) {
-    return {
-        type: FETCH_TICKERS_FAIL,
-        payload: error,
     };
 }
 
@@ -30,22 +23,27 @@ function userLogoutSuccess() {
     };
 }
 
-function fetchTickersSuccess(data) {
+function fetchCarsFail() {
     return {
-        type: FETCH_TICKERS_SUCCESS,
-        payload: data,
+        type: FETCH_CARS_FAIL,
+    };
+}
+
+function fetchCarsSuccess() {
+    return {
+        type: FETCH_CARS_SUCCESS,
     };
 }
 
 export {
     PENDING,
-    FETCH_TICKERS_SUCCESS,
-    FETCH_TICKERS_FAIL,
     USER_LOGIN_SUCCESS,
     USER_LOGOUT_SUCCESS,
+    FETCH_CARS_SUCCESS,
+    FETCH_CARS_FAIL,
     pending,
-    fetchTickersFail,
-    fetchTickersSuccess,
     userLoginSuccess,
     userLogoutSuccess,
+    fetchCarsFail,
+    fetchCarsSuccess,
 };

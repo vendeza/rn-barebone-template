@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
-import {strategyScreenerReducer} from "./Start/store/reducer";
-import {optionsScreenerReducer} from "./Challenges/store/reducer";
+import {homeReducer} from "./Start/store/reducer";
+import {browseReducer} from "./Rewards/store/reducer";
 import {mainReducer} from "./mainStore/reducer";
 
 const appReducer = combineReducers({
-    strategyScreenerReducer,
-    optionsScreenerReducer,
+    homeReducer,
+    browseReducer,
     mainReducer,
 });
 

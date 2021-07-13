@@ -114,7 +114,6 @@
 				CCF7DE22E15A7F5818507898 /* Pods-reactNativeBareboneTemplate-reactNativeBareboneTemplateTests.debug.xcconfig */,
 				DDFD2074C4BE71480833DAA7 /* Pods-reactNativeBareboneTemplate-reactNativeBareboneTemplateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -485,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 693KX5V8YX;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = reactNativeBareboneTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 693KX5V8YX;
 				INFOPLIST_FILE = reactNativeBareboneTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,9 +1,8 @@
+import Start from "./Start";
 import Mobilität from "./Mobilität";
+import TripDetails from "./TripDetails";
 import Rewards from "./Rewards";
 import Mehr from "./Mehr";
-import Profile from "./Mehr/Profile";
+import Login from "./Mehr/Login";
 
-import Start from "./Start";
-import Challenges from "./Challenges";
-
-export {Mobilität, Rewards, Mehr, Profile, Start, Challenges};
+export {Start, Mobilität, TripDetails, Mehr, Rewards, Login};

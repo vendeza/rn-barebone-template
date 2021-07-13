@@ -7,13 +7,13 @@ import commonStyle from "../styles/commonStyles";
 const Label = ({labelText, tooltipText}) => {
     if (!tooltipText) {
         return (
-            <View style={{flex: 1, marginVertical: 20, marginTop: 35}}>
+            <View style={{ marginVertical: 20, marginTop: 35}}>
                 <Text style={styles.label}>{labelText}</Text>
             </View>
         );
     }
     return (
-        <View style={{flex: 1, marginVertical: 20, marginTop: 35}}>
+        <View style={{marginVertical: 20, marginTop: 10}}>
             <Tooltip
                 width={180}
                 height={200}
@@ -54,9 +54,7 @@ Label.propTypes = {
 const styles = StyleSheet.create({
     label: {
         ...commonStyle.p,
-        color: "#fff",
         fontWeight: "600",
-        textTransform: "uppercase",
     },
 });
 

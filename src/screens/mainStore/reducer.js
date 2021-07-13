@@ -1,26 +1,20 @@
 import {
-    FETCH_TICKERS_FAIL,
-    FETCH_TICKERS_SUCCESS,
+    FETCH_CARS_FAIL,
+    FETCH_CARS_SUCCESS,
     PENDING,
     USER_LOGIN_SUCCESS,
     USER_LOGOUT_SUCCESS,
 } from "./actions";
 
 const initialState = {
-    tickers: [],
+    user: {name: "Best User"},
+    exampleValue: 123,
     pending: false,
     error: null,
-    user: {authenticated: false, accessToken: "", email: "", name: ""},
 };
 
 export function mainReducer(state = initialState, action) {
     switch (action.type) {
-        case FETCH_TICKERS_SUCCESS:
-            return {
-                ...state,
-                pending: false,
-                tickers: action.payload,
-            };
         case PENDING: {
             return {
                 ...state,
@@ -28,18 +22,10 @@ export function mainReducer(state = initialState, action) {
             };
         }
 
-        case FETCH_TICKERS_FAIL: {
-            return {
-                ...state,
-                pending: false,
-                error: action.payload,
-            };
-        }
-
         case USER_LOGIN_SUCCESS: {
             return {
                 ...state,
-                user: {...state.user, authenticated: true, ...action.payload},
+                user: state.user,
             };
         }
 
@@ -47,9 +33,23 @@ export function mainReducer(state = initialState, action) {
             return {
                 ...state,
                 user: {authenticated: false},
+                pending: false,
             };
         }
 
+        case FETCH_CARS_SUCCESS: {
+            return {
+                ...state,
+                pending: false,
+                cars: state.cars,
+            };
+        }
+        case FETCH_CARS_FAIL: {
+            return {
+                ...state,
+                pending: false,
+            };
+        }
         default: {
             return state;
         }

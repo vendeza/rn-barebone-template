@@ -1,55 +1,25 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import {Text, View} from "react-native";
+import {Text} from "react-native";
 import commonStyles from "../../styles/commonStyles";
 import ContainerView from "../../components/ContainerView";
-import ButtonCustom from "../../components/ButtonCustom";
 import {bindActionCreators} from "redux";
-import {userLogout} from "../mainStore/dispatcher";
+import {userLogout} from "../mainStore/fetchers";
 import {connect} from "react-redux";
-const Mehr = (props) => {
-    const logout = async () => {
-        await props.userLogout();
-        props.navigation.navigate("Rewards");
-    };
+import ButtonCustom from "../../components/ButtonCustom";
 
-    const ShowButtons = () => {
-        if (props.authenticated) {
-            return (
-                <View>
-                    <ButtonCustom
-                        buttonStyle={{marginTop: 20}}
-                        title={"Profile"}
-                        onPress={() => {
-                            props.navigation.navigate("Profile");
-                        }}
-                    />
-                    <ButtonCustom
-                        buttonStyle={{marginTop: 20}}
-                        title={"Log Out"}
-                        onPress={() => {
-                            logout();
-                        }}
-                    />
-                </View>
-            );
-        }
-        return (
-            <ButtonCustom
-                buttonStyle={{marginTop: 20}}
-                title={"Rewards"}
-                onPress={() => {
-                    props.navigation.navigate("Rewards");
-                }}
-            />
-        );
-    };
+const Mehr = (props) => {
     return (
         <ContainerView>
-            <View style={{flex: 1, padding: 20}}>
-                <Text style={commonStyles.h1}>{"Mehr Screen"}</Text>
-                <View>{ShowButtons()}</View>
-            </View>
+            <Text style={commonStyles.h1}>{"Mehr Screen"}</Text>
+
+            <ButtonCustom
+                buttonStyle={{marginTop: 20}}
+                title={"Login"}
+                onPress={() => {
+                    props.navigation.navigate("Login");
+                }}
+            />
         </ContainerView>
     );
 };
@@ -70,7 +40,7 @@ Mehr.propTypes = {
 const mapStateToProps = (state) => {
     const {mainReducer} = state;
     return {
-        authenticated: mainReducer.user.authenticated,
+        userName: mainReducer.user.name,
     };
 };
 

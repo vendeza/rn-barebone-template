@@ -20,6 +20,7 @@ const InputCustom = ({
             containerStyle={{
                 paddingLeft: 0,
                 paddingRight: 0,
+                marginTop:10,
             }}
             textContentType={type}
             inputStyle={styles.input}
@@ -63,12 +64,11 @@ InputCustom.propTypes = {
 const styles = StyleSheet.create({
     input: {
         backgroundColor: "#eaeaf3",
-        borderRadius: 90,
         color: "black",
         fontSize: 16,
         height: 36,
         marginLeft: 0,
-        marginTop: 0,
+        marginTop: 10,
         paddingBottom: 7,
         paddingHorizontal: 0,
         paddingLeft: 16,

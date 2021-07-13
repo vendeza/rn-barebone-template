@@ -1,7 +1,7 @@
 import {
-    FETCH_HOME_FAIL,
-    FETCH_HOME_PENDING,
-    FETCH_HOME_SUCCESS,
+    FETCH_BROWSE_FAIL,
+    FETCH_BROWSE_PENDING,
+    FETCH_BROWSE_SUCCESS,
 } from "./actions";
 
 const initialState = {
@@ -16,16 +16,16 @@ const initialState = {
     },
 };
 
-export function homeReducer(state = initialState, action) {
+export function browseReducer(state = initialState, action) {
     switch (action.type) {
-        case FETCH_HOME_PENDING: {
+        case FETCH_BROWSE_PENDING: {
             return {
                 ...state,
                 pending: true,
             };
         }
 
-        case FETCH_HOME_FAIL: {
+        case FETCH_BROWSE_FAIL: {
             return {
                 ...state,
                 pending: false,
@@ -33,7 +33,7 @@ export function homeReducer(state = initialState, action) {
             };
         }
 
-        case FETCH_HOME_SUCCESS:
+        case FETCH_BROWSE_SUCCESS:
             return {
                 ...state,
                 pending: false,

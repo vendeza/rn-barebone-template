@@ -10,6 +10,38 @@ const iconContainer = {
 };
 
 const commonStyles = StyleSheet.create({
+    h1: {
+        color: colors.black,
+        fontSize: 28,
+        fontWeight: "700",
+        lineHeight: 28,
+        marginBottom: 10,
+    },
+    h2: {
+        fontSize: 22,
+        fontWeight: Platform.OS === "android" ? "700" : "600",
+        lineHeight: 28,
+        marginBottom: 10,
+    },
+    h3: {
+        fontSize: 18,
+        lineHeight: 24,
+        fontWeight: Platform.OS === "android" ? "700" : "600",
+        marginBottom: 10,
+        marginTop:10,
+    },
+    h4: {
+        color: colors.lightGray,
+        fontSize: 16,
+        fontWeight: "400",
+        lineHeight: 18,
+        marginBottom: 10,
+    },
+    p: {
+        color: colors.lightGray,
+        fontSize: 18,
+        lineHeight: 26,
+    },
     blueIconContainer: {
         ...iconContainer,
         backgroundColor: colors.blue,
@@ -26,32 +58,6 @@ const commonStyles = StyleSheet.create({
         ...iconContainer,
         backgroundColor: colors.green,
     },
-
-    h1: {
-        color: colors.black,
-        fontSize: 28,
-        fontWeight: "700",
-        lineHeight: 28,
-        marginBottom: 10,
-    },
-    h2: {
-        fontSize: 22,
-        fontWeight: Platform.OS === "android" ? "700" : "600",
-        lineHeight: 28,
-        marginBottom: 10,
-    },
-    h3: {
-        fontSize: 18,
-        fontWeight: Platform.OS === "android" ? "700" : "600",
-        marginBottom: 10,
-    },
-    h4: {
-        color: colors.lightGray,
-        fontSize: 16,
-        fontWeight: "400",
-        lineHeight: 18,
-        marginBottom: 10,
-    },
     iconContainer: {
         ...iconContainer,
     },
@@ -64,21 +70,16 @@ const commonStyles = StyleSheet.create({
     mainContainer: {
         backgroundColor: colors.backgroundColor,
         flex: 1,
-        flexDirection: "column",
         height: "100%",
         padding: Platform.OS === "android" ? 0 : 20,
-        paddingTop: Platform.OS === "android" ? 50 : 0,
+        paddingTop: Platform.OS === "android" ? 50 : 20,
     },
 
     orangeIconContainer: {
         ...iconContainer,
         backgroundColor: colors.orange,
     },
-    p: {
-        color: colors.lightGray,
-        fontSize: 14,
-        lineHeight: 18,
-    },
+
     redIconContainer: {
         ...iconContainer,
         backgroundColor: colors.stoutRed,

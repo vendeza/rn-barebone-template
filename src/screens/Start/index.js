@@ -3,10 +3,14 @@ import {Text, View} from "react-native";
 import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {userLogout} from "../mainStore/fetchers";
+import commonStyles from "../../styles/commonStyles";
 
 const Start = (props) => {
     const onSearch = async () => {
-        props.navigation.navigate("StrategySelectStock");
+        props.navigation.navigate("Browse");
     };
 
     const GetStartedButton = () => {
@@ -26,21 +30,12 @@ const Start = (props) => {
 
     return (
         <View style={{flex: 1}}>
-            <ContainerView
-                statusBarColor={colors.orange2}
-                containerColor={colors.orange2}
-                screenTitle={"Home"}>
-                <View
-                    style={styles.searchFieldsContainer}
-                    keyboardShouldPersistTaps="handled">
-                    <Text
-                        style={{
-                            fontSize: 18,
-                            textAlign: "center",
-                            paddingHorizontal: 20,
-                            paddingVertical: 30,
-                            lineHeight: 26,
-                        }}>
+            <ContainerView>
+                <View style={styles.searchFieldsContainer}>
+                    <Text style={commonStyles.h1}>
+                        {"The perfect template to start your project"}
+                    </Text>
+                    <Text style={commonStyles.p}>
                         {"Our algorithms help to lorem ipsum dolor sit amet, consectetur adipiscing " +
                             "elit, sed do eiusmod tempor incididunt ut labore. Let’s help find the strategy " +
                             "that works best for you."}
@@ -51,5 +46,19 @@ const Start = (props) => {
         </View>
     );
 };
+const mapStateToProps = (state) => {
+    const {mainReducer} = state;
+    return {
+        userName: mainReducer.user.name,
+    };
+};
 
-export default Start;
+const mapDispatchToProps = (dispatch) =>
+    bindActionCreators(
+        {
+            userLogout: userLogout,
+        },
+        dispatch,
+    );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Start);

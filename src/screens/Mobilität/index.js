@@ -1,32 +1,55 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Text, View, StyleSheet} from "react-native";
+import {Text} from "react-native";
 import commonStyles from "../../styles/commonStyles";
 import ContainerView from "../../components/ContainerView";
+import {bindActionCreators} from "redux";
+import {userLogout} from "../mainStore/fetchers";
+import {connect} from "react-redux";
+import ButtonCustom from "../../components/ButtonCustom";
 
-const Mobilität = ({onPress, children, text}) => {
+const Mobilität = (props) => {
     return (
         <ContainerView>
-            <View style={{padding: 20}}>
-                <Text style={commonStyles.h1}>{"Mobilität Screen"}</Text>
-                <Text style={commonStyles.p}>{"Build screen content"}</Text>
-            </View>
+            <Text style={commonStyles.h1}>{"Mehr Screen"}</Text>
+
+            <ButtonCustom
+                buttonStyle={{marginTop: 20}}
+                title={"Login"}
+                onPress={() => {
+                    props.navigation.navigate("Login");
+                }}
+            />
         </ContainerView>
     );
 };
-
 Mobilität.defaultProps = {
     children: null,
     onPress: () => {},
     text: "",
+    authenticated: false,
 };
 
 Mobilität.propTypes = {
     children: PropTypes.node,
     onPress: PropTypes.func,
     text: PropTypes.string,
+    authenticated: PropTypes.bool,
 };
 
-const styles = StyleSheet.create({});
+const mapStateToProps = (state) => {
+    const {mainReducer} = state;
+    return {
+        userName: mainReducer.user.name,
+    };
+};
 
-export default Mobilität;
+const mapDispatchToProps = (dispatch) =>
+    bindActionCreators(
+        {
+            userLogout: userLogout,
+        },
+        dispatch,
+    );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Mobilität);

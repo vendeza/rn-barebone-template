@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { persistStore, persistReducer } from "redux-persist";
-import AsyncStorage from "@react-native-async-storage/async-storage"; //TODO why is it needed
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import rootReducer from "./src/screens/rootReducer";
 
 const conf = {

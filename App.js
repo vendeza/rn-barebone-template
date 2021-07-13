@@ -1,49 +1,49 @@
-import React, {useEffect, useState} from "react";
-import {SafeAreaView, Text, View} from "react-native";
-import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
-import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {createStackNavigator} from "@react-navigation/stack";
-import {BackButton} from "./src/components";
+import React from "react";
+import { SafeAreaView, View } from "react-native";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
+import { BackButton } from "./src/components";
 import {
-  Mobilität,
-  Mehr,
-  Challenges,
-  Profile,
   Start,
-  Rewards
+  Mobilität,
+  TripDetails,
+  Rewards,
+  Mehr,
+
 } from "./src/screens";
+
 import Icons from "react-native-vector-icons/MaterialIcons";
 import colors from "./src/styles/colors";
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
-import { userLogin} from "./src/screens/mainStore/dispatcher";
-import { fetchTickers } from "./src/screens/mainStore/dispatcher";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import Spinner from "react-native-loading-spinner-overlay";
 import styles from "./src/screens/Start/styles";
-const MenuStackNavigator = createStackNavigator();
+
+const StackNavigator = createStackNavigator();
 const Screens = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const Explore = createStackNavigator();
 
 const screenOptions = (props) => ({
   headerShown: false,
-  tabBarIcon: ({focused}) => {
+  tabBarIcon: ({ focused }) => {
     let iconName;
 
     switch (props.route.name) {
-      case "Start":
+      case "StartScreens":
         iconName = "home";
         break;
-      case "Mobilität":
+      case "MobilitätScreens":
         iconName = "speed";
         break;
-      case "Challenges":
+      case "TripDetailsScreens":
         iconName = "emoji-events";
         break;
-      case "Rewards":
+      case "RewardsScreens":
         iconName = "redeem";
         break;
-      case "Mehr":
+      case "MehrScreens":
         iconName = "emoji-events";
         break;
       default:
@@ -64,65 +64,60 @@ const navigatorOptions = {
     height: 120,
   },
   headerTitleStyle: {
-    fontSize:18,
+    fontSize: 18,
     fontWeight: "bold",
   },
-  headerLeft: ({canGoBack, onPress}) =>
-    canGoBack && (
-      <BackButton goBack={onPress}/>
-    ),
+  headerLeft: ({ canGoBack, onPress }) =>
+    canGoBack && <BackButton goBack={onPress} />,
 };
 
-const ExploreScreens = () => {
+const StartScreens = () => {
   return (
     <Explore.Navigator screenOptions={navigatorOptions}>
-      <MenuStackNavigator.Screen
-        options={{headerShown: false}}
-        name="MainExplore"
-        component={Start}
-      />
+      <StackNavigator.Screen name="Start" component={Start} />
     </Explore.Navigator>
   );
 };
+
 
 const BrowseScreens = () => {
   return (
     <Explore.Navigator screenOptions={navigatorOptions}>
-      <MenuStackNavigator.Screen
-
-        name="Trip Details"
-        component={Challenges}
-      />
-
+      <StackNavigator.Screen name="Browse" component={Browse} />
     </Explore.Navigator>
   );
 };
 
-const MenuScreens = () => {
-  return (
-    <MenuStackNavigator.Navigator screenOptions={{headerShown: false}}>
-      <MenuStackNavigator.Screen name="MainMenu" component={Mehr} />
-      <MenuStackNavigator.Screen name="Profile" component={Profile} />
-    </MenuStackNavigator.Navigator>
-  );
-};
 
 const TabsStackScreen = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
-        name="Start"
-        component={ExploreScreens}
-        options={{headerLeft: null}}
+        name="StartScreens"
+        component={StartScreens}
+        options={{ title: "Start" }}
       />
-      <Tab.Screen name="Mobilität" component={Mobilität} />
+
       <Tab.Screen
-        name="Challenges"
-        component={BrowseScreens}
-        options={{title: 'Trip Details'}}
+        options={{ title: "Mobilität" }}
+        name="MobilitätScreens"
+        component={Mobilität}
       />
-      <Tab.Screen name="Rewards" screenOptions={{title: 'Trip Details'}} component={Rewards} />
-      <Tab.Screen name="Mehr" component={MenuScreens} />
+      <Tab.Screen
+        options={{ title: "Trip Details" }}
+        name="TripDetailsScreens"
+        component={TripDetails}
+      />
+      <Tab.Screen
+        options={{ title: "Rewards" }}
+        name="RewardsScreens"
+        component={Rewards}
+      />
+      <Tab.Screen
+        options={{ title: "Mehr" }}
+        name="MehrScreens"
+        component={Mehr}
+      />
     </Tab.Navigator>
   );
 };
@@ -137,12 +132,17 @@ const MyTheme = {
 };
 
 const App = (props) => {
-
-
   if (props.pending) {
     return (
       <SafeAreaView>
-        <View style={{width:"100%", height:"100%", flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
+        <View
+          style={{
+            width: "100%",
+            height: "100%",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
           <Spinner
             visible={props.pending}
             textContent={"Loading..."}
@@ -155,20 +155,11 @@ const App = (props) => {
 
   return (
     <NavigationContainer theme={MyTheme}>
-      <Screens.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-       >
+      <Screens.Navigator screenOptions={{ headerShown: false }}>
         <Screens.Screen
-          name={"Rewards"}
+          name={"Main"}
           component={TabsStackScreen}
-          options={{title: "", headerLeft: null}}
-        />
-
-        <Screens.Screen
-          name={"Tigerstance"}
-          component={TabsStackScreen}
+          options={{ headerLeft: null }}
         />
       </Screens.Navigator>
     </NavigationContainer>
@@ -176,24 +167,16 @@ const App = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const {mainReducer} = state;
+  const { mainReducer } = state;
   return {
     pending: mainReducer.pending,
-    tickers: mainReducer.tickers,
-    expirationTimestamps: mainReducer.error,
   };
 };
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
-    {
-      userLogin: userLogin,
-      fetchTickers: fetchTickers
-    },
+    {},
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

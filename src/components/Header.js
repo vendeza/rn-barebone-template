@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         height: 80,
         justifyContent: "space-between",
-        paddingRight: 20,
+        paddingRight: 0,
     },
 });
 
