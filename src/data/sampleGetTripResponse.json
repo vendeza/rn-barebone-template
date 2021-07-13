@@ -1,0 +1,1997 @@
+{
+  "status": {
+    "code": 0,
+    "message": "OK"
+  },
+  "serverTs": 1625830183702,
+  "data": {
+    "id": 35,
+    "type": "CAR",
+    "startLat": 48.21170888608994,
+    "startLon": 16.402546559161905,
+    "startAddress": "Hauptallee 8, 1020 Wien, Österreich",
+    "startTs": 1625757000,
+    "endLat": 48.22392450475499,
+    "endLon": 16.385990718231085,
+    "endAddress": "Pazmanitengasse 26, 1020 Wien, Österreich",
+    "endTs": 1625758200,
+    "distanceMeters": 2142,
+    "scores": {
+      "safety": 100,
+      "distraction": 84,
+      "speed": 86,
+      "total": 89
+    },
+    "tripPoints": [
+      {
+        "time": 1625757038,
+        "lat": "48.211709",
+        "lon": "16.402547",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757045,
+        "lat": "48.211906",
+        "lon": "16.402155",
+        "speed": 18,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757048,
+        "lat": "48.212002",
+        "lon": "16.401996",
+        "speed": 18,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757055,
+        "lat": "48.212209",
+        "lon": "16.401619",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757056,
+        "lat": "48.212249",
+        "lon": "16.401569",
+        "speed": 18,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757063,
+        "lat": "48.212424",
+        "lon": "16.401201",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757064,
+        "lat": "48.212469",
+        "lon": "16.401139",
+        "speed": 20,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757068,
+        "lat": "48.212585",
+        "lon": "16.400951",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757069,
+        "lat": "48.212604",
+        "lon": "16.400895",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757071,
+        "lat": "48.212626",
+        "lon": "16.400834",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757078,
+        "lat": "48.212823",
+        "lon": "16.400461",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757082,
+        "lat": "48.212946",
+        "lon": "16.400248",
+        "speed": 19,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757085,
+        "lat": "48.213036",
+        "lon": "16.400094",
+        "speed": 18,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757087,
+        "lat": "48.213085",
+        "lon": "16.399957",
+        "speed": 21,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757093,
+        "lat": "48.213197",
+        "lon": "16.399657",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757097,
+        "lat": "48.213290",
+        "lon": "16.399463",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757101,
+        "lat": "48.213398",
+        "lon": "16.399229",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757102,
+        "lat": "48.213429",
+        "lon": "16.399180",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757117,
+        "lat": "48.213851",
+        "lon": "16.398395",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757123,
+        "lat": "48.214061",
+        "lon": "16.398045",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757126,
+        "lat": "48.214108",
+        "lon": "16.397933",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757127,
+        "lat": "48.214116",
+        "lon": "16.397887",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757130,
+        "lat": "48.214237",
+        "lon": "16.397678",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757133,
+        "lat": "48.214323",
+        "lon": "16.397514",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757135,
+        "lat": "48.214388",
+        "lon": "16.397418",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757141,
+        "lat": "48.214577",
+        "lon": "16.397108",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757147,
+        "lat": "48.214729",
+        "lon": "16.396812",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757149,
+        "lat": "48.214779",
+        "lon": "16.396719",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757153,
+        "lat": "48.214894",
+        "lon": "16.396514",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757156,
+        "lat": "48.214962",
+        "lon": "16.396373",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757158,
+        "lat": "48.215019",
+        "lon": "16.396270",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757161,
+        "lat": "48.215109",
+        "lon": "16.396110",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757165,
+        "lat": "48.215215",
+        "lon": "16.395900",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757169,
+        "lat": "48.215319",
+        "lon": "16.395672",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757172,
+        "lat": "48.215413",
+        "lon": "16.395531",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757177,
+        "lat": "48.215525",
+        "lon": "16.395261",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757182,
+        "lat": "48.215642",
+        "lon": "16.394993",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757184,
+        "lat": "48.215707",
+        "lon": "16.394876",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757191,
+        "lat": "48.215854",
+        "lon": "16.394585",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757193,
+        "lat": "48.215905",
+        "lon": "16.394495",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757197,
+        "lat": "48.216018",
+        "lon": "16.394285",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757198,
+        "lat": "48.216046",
+        "lon": "16.394251",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757200,
+        "lat": "48.216103",
+        "lon": "16.394127",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757205,
+        "lat": "48.216235",
+        "lon": "16.393862",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757207,
+        "lat": "48.216285",
+        "lon": "16.393783",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757208,
+        "lat": "48.216325",
+        "lon": "16.393765",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757211,
+        "lat": "48.216442",
+        "lon": "16.393714",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757212,
+        "lat": "48.216480",
+        "lon": "16.393696",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757213,
+        "lat": "48.216536",
+        "lon": "16.393692",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757215,
+        "lat": "48.216622",
+        "lon": "16.393653",
+        "speed": 14,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757216,
+        "lat": "48.216651",
+        "lon": "16.393605",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757217,
+        "lat": "48.216676",
+        "lon": "16.393550",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757218,
+        "lat": "48.216716",
+        "lon": "16.393513",
+        "speed": 17,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757220,
+        "lat": "48.216806",
+        "lon": "16.393395",
+        "speed": 22,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757229,
+        "lat": "48.217268",
+        "lon": "16.392719",
+        "speed": 24,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757230,
+        "lat": "48.217251",
+        "lon": "16.392646",
+        "speed": 16,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757232,
+        "lat": "48.217292",
+        "lon": "16.392546",
+        "speed": 14,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757233,
+        "lat": "48.217290",
+        "lon": "16.392497",
+        "speed": 13,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757234,
+        "lat": "48.217287",
+        "lon": "16.392467",
+        "speed": 11,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757236,
+        "lat": "48.217281",
+        "lon": "16.392429",
+        "speed": 6,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757240,
+        "lat": "48.217265",
+        "lon": "16.392320",
+        "speed": 4,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757241,
+        "lat": "48.217257",
+        "lon": "16.392306",
+        "speed": 4,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757244,
+        "lat": "48.217237",
+        "lon": "16.392190",
+        "speed": 9,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757245,
+        "lat": "48.217289",
+        "lon": "16.392039",
+        "speed": 9,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757246,
+        "lat": "48.217334",
+        "lon": "16.391991",
+        "speed": 10,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757247,
+        "lat": "48.217376",
+        "lon": "16.391961",
+        "speed": 11,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757248,
+        "lat": "48.217413",
+        "lon": "16.391950",
+        "speed": 12,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757252,
+        "lat": "48.217553",
+        "lon": "16.391898",
+        "speed": 13,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757256,
+        "lat": "48.217609",
+        "lon": "16.391829",
+        "speed": 4,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757257,
+        "lat": "48.217606",
+        "lon": "16.391838",
+        "speed": 0,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757258,
+        "lat": "48.217609",
+        "lon": "16.391844",
+        "speed": 0,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757262,
+        "lat": "48.217619",
+        "lon": "16.391826",
+        "speed": 4,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757263,
+        "lat": "48.217626",
+        "lon": "16.391822",
+        "speed": 3,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757264,
+        "lat": "48.217633",
+        "lon": "16.391797",
+        "speed": 5,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757265,
+        "lat": "48.217624",
+        "lon": "16.391771",
+        "speed": 5,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757267,
+        "lat": "48.217643",
+        "lon": "16.391694",
+        "speed": 9,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757268,
+        "lat": "48.217668",
+        "lon": "16.391665",
+        "speed": 10,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757269,
+        "lat": "48.217700",
+        "lon": "16.391641",
+        "speed": 11,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757273,
+        "lat": "48.217783",
+        "lon": "16.391504",
+        "speed": 11,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757275,
+        "lat": "48.217810",
+        "lon": "16.391420",
+        "speed": 11,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757276,
+        "lat": "48.217820",
+        "lon": "16.391365",
+        "speed": 12,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757277,
+        "lat": "48.217810",
+        "lon": "16.391297",
+        "speed": 14,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757278,
+        "lat": "48.217793",
+        "lon": "16.391243",
+        "speed": 14,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757280,
+        "lat": "48.217774",
+        "lon": "16.391132",
+        "speed": 14,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757281,
+        "lat": "48.217777",
+        "lon": "16.391086",
+        "speed": 12,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757282,
+        "lat": "48.217783",
+        "lon": "16.391044",
+        "speed": 11,
+        "speedLimit": 10,
+        "value": 3
+      },
+      {
+        "time": 1625757283,
+        "lat": "48.217783",
+        "lon": "16.391012",
+        "speed": 8,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757286,
+        "lat": "48.217811",
+        "lon": "16.391018",
+        "speed": 0,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757298,
+        "lat": "48.217819",
+        "lon": "16.391005",
+        "speed": 3,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757300,
+        "lat": "48.217808",
+        "lon": "16.390970",
+        "speed": 4,
+        "speedLimit": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757301,
+        "lat": "48.217794",
+        "lon": "16.390934",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757303,
+        "lat": "48.217778",
+        "lon": "16.390856",
+        "speed": 10,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757306,
+        "lat": "48.217760",
+        "lon": "16.390693",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757308,
+        "lat": "48.217758",
+        "lon": "16.390584",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757310,
+        "lat": "48.217735",
+        "lon": "16.390468",
+        "speed": 15,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757312,
+        "lat": "48.217714",
+        "lon": "16.390383",
+        "speed": 12,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757314,
+        "lat": "48.217707",
+        "lon": "16.390305",
+        "speed": 11,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757315,
+        "lat": "48.217724",
+        "lon": "16.390242",
+        "speed": 12,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757316,
+        "lat": "48.217742",
+        "lon": "16.390203",
+        "speed": 12,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757317,
+        "lat": "48.217762",
+        "lon": "16.390186",
+        "speed": 10,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757318,
+        "lat": "48.217790",
+        "lon": "16.390202",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757319,
+        "lat": "48.217808",
+        "lon": "16.390233",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757320,
+        "lat": "48.217809",
+        "lon": "16.390281",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757322,
+        "lat": "48.217829",
+        "lon": "16.390316",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757323,
+        "lat": "48.217854",
+        "lon": "16.390316",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757324,
+        "lat": "48.217914",
+        "lon": "16.390283",
+        "speed": 8,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757325,
+        "lat": "48.217955",
+        "lon": "16.390229",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757326,
+        "lat": "48.217998",
+        "lon": "16.390192",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757327,
+        "lat": "48.218035",
+        "lon": "16.390180",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757329,
+        "lat": "48.218084",
+        "lon": "16.390132",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757330,
+        "lat": "48.218102",
+        "lon": "16.390092",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757331,
+        "lat": "48.218120",
+        "lon": "16.390068",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757332,
+        "lat": "48.218135",
+        "lon": "16.390034",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757337,
+        "lat": "48.218193",
+        "lon": "16.389894",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757338,
+        "lat": "48.218195",
+        "lon": "16.389868",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757340,
+        "lat": "48.218225",
+        "lon": "16.389822",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757341,
+        "lat": "48.218246",
+        "lon": "16.389786",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757342,
+        "lat": "48.218294",
+        "lon": "16.389791",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757343,
+        "lat": "48.218343",
+        "lon": "16.389795",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757344,
+        "lat": "48.218381",
+        "lon": "16.389813",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757345,
+        "lat": "48.218408",
+        "lon": "16.389830",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757346,
+        "lat": "48.218429",
+        "lon": "16.389856",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757348,
+        "lat": "48.218474",
+        "lon": "16.389874",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757349,
+        "lat": "48.218494",
+        "lon": "16.389890",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757350,
+        "lat": "48.218523",
+        "lon": "16.389912",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757352,
+        "lat": "48.218583",
+        "lon": "16.389958",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757355,
+        "lat": "48.218662",
+        "lon": "16.389979",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757356,
+        "lat": "48.218690",
+        "lon": "16.389947",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757357,
+        "lat": "48.218709",
+        "lon": "16.389909",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757358,
+        "lat": "48.218734",
+        "lon": "16.389899",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757359,
+        "lat": "48.218773",
+        "lon": "16.389906",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757360,
+        "lat": "48.218797",
+        "lon": "16.389915",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757363,
+        "lat": "48.218864",
+        "lon": "16.389926",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757365,
+        "lat": "48.218930",
+        "lon": "16.389978",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757366,
+        "lat": "48.218955",
+        "lon": "16.390013",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757368,
+        "lat": "48.219008",
+        "lon": "16.390031",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757369,
+        "lat": "48.219041",
+        "lon": "16.390025",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757371,
+        "lat": "48.219089",
+        "lon": "16.390008",
+        "speed": 8,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757372,
+        "lat": "48.219100",
+        "lon": "16.389999",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757377,
+        "lat": "48.219210",
+        "lon": "16.389977",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757378,
+        "lat": "48.219259",
+        "lon": "16.389945",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757379,
+        "lat": "48.219301",
+        "lon": "16.389981",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757380,
+        "lat": "48.219321",
+        "lon": "16.390008",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757387,
+        "lat": "48.219538",
+        "lon": "16.390136",
+        "speed": 8,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757388,
+        "lat": "48.219561",
+        "lon": "16.390163",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757390,
+        "lat": "48.219619",
+        "lon": "16.390166",
+        "speed": 5,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757391,
+        "lat": "48.219646",
+        "lon": "16.390145",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757395,
+        "lat": "48.219774",
+        "lon": "16.390124",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757398,
+        "lat": "48.219861",
+        "lon": "16.390121",
+        "speed": 5,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757400,
+        "lat": "48.219912",
+        "lon": "16.390105",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757402,
+        "lat": "48.220005",
+        "lon": "16.390122",
+        "speed": 8,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757404,
+        "lat": "48.220077",
+        "lon": "16.390102",
+        "speed": 4,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757405,
+        "lat": "48.220104",
+        "lon": "16.390084",
+        "speed": 3,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757410,
+        "lat": "48.220202",
+        "lon": "16.389970",
+        "speed": 3,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757412,
+        "lat": "48.220295",
+        "lon": "16.389907",
+        "speed": 7,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757414,
+        "lat": "48.220362",
+        "lon": "16.389843",
+        "speed": 8,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757416,
+        "lat": "48.220435",
+        "lon": "16.389814",
+        "speed": 8,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757418,
+        "lat": "48.220549",
+        "lon": "16.389813",
+        "speed": 11,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757421,
+        "lat": "48.220704",
+        "lon": "16.389859",
+        "speed": 12,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757424,
+        "lat": "48.220843",
+        "lon": "16.389889",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757428,
+        "lat": "48.221059",
+        "lon": "16.389899",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757429,
+        "lat": "48.221134",
+        "lon": "16.389845",
+        "speed": 14,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757432,
+        "lat": "48.221254",
+        "lon": "16.389765",
+        "speed": 13,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757433,
+        "lat": "48.221245",
+        "lon": "16.389748",
+        "speed": 4,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757434,
+        "lat": "48.221285",
+        "lon": "16.389744",
+        "speed": 5,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757436,
+        "lat": "48.221318",
+        "lon": "16.389678",
+        "speed": 4,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757437,
+        "lat": "48.221314",
+        "lon": "16.389627",
+        "speed": 5,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757438,
+        "lat": "48.221315",
+        "lon": "16.389579",
+        "speed": 6,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757444,
+        "lat": "48.221324",
+        "lon": "16.389324",
+        "speed": 5,
+        "speedLimit": 50,
+        "value": 1
+      },
+      {
+        "time": 1625757445,
+        "lat": "48.221341",
+        "lon": "16.389275",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757447,
+        "lat": "48.221322",
+        "lon": "16.389123",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757449,
+        "lat": "48.221367",
+        "lon": "16.388983",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757450,
+        "lat": "48.221453",
+        "lon": "16.388918",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757451,
+        "lat": "48.221508",
+        "lon": "16.388882",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757452,
+        "lat": "48.221541",
+        "lon": "16.388878",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757453,
+        "lat": "48.221567",
+        "lon": "16.388893",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757454,
+        "lat": "48.221583",
+        "lon": "16.388905",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757455,
+        "lat": "48.221604",
+        "lon": "16.388916",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757456,
+        "lat": "48.221632",
+        "lon": "16.388929",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757457,
+        "lat": "48.221657",
+        "lon": "16.388957",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757462,
+        "lat": "48.221790",
+        "lon": "16.388959",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757463,
+        "lat": "48.221871",
+        "lon": "16.388880",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757464,
+        "lat": "48.221926",
+        "lon": "16.388827",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757465,
+        "lat": "48.221952",
+        "lon": "16.388765",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757466,
+        "lat": "48.221966",
+        "lon": "16.388712",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757470,
+        "lat": "48.222012",
+        "lon": "16.388522",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757472,
+        "lat": "48.222029",
+        "lon": "16.388438",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757473,
+        "lat": "48.222028",
+        "lon": "16.388390",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757479,
+        "lat": "48.222100",
+        "lon": "16.388143",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757481,
+        "lat": "48.222144",
+        "lon": "16.388039",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757483,
+        "lat": "48.222203",
+        "lon": "16.387942",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757484,
+        "lat": "48.222263",
+        "lon": "16.387919",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757485,
+        "lat": "48.222300",
+        "lon": "16.387918",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757486,
+        "lat": "48.222325",
+        "lon": "16.387932",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757487,
+        "lat": "48.222344",
+        "lon": "16.387952",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757488,
+        "lat": "48.222365",
+        "lon": "16.387970",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757491,
+        "lat": "48.222434",
+        "lon": "16.387979",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757496,
+        "lat": "48.222571",
+        "lon": "16.387975",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757497,
+        "lat": "48.222644",
+        "lon": "16.387876",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757498,
+        "lat": "48.222712",
+        "lon": "16.387808",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757501,
+        "lat": "48.222796",
+        "lon": "16.387792",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757503,
+        "lat": "48.222820",
+        "lon": "16.387724",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757504,
+        "lat": "48.222830",
+        "lon": "16.387687",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757506,
+        "lat": "48.222861",
+        "lon": "16.387667",
+        "speed": 6,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757508,
+        "lat": "48.222865",
+        "lon": "16.387595",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757509,
+        "lat": "48.222821",
+        "lon": "16.387489",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757512,
+        "lat": "48.222874",
+        "lon": "16.387324",
+        "speed": 10,
+        "value": 1
+      },
+      {
+        "time": 1625757514,
+        "lat": "48.222894",
+        "lon": "16.387242",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757517,
+        "lat": "48.222968",
+        "lon": "16.387087",
+        "speed": 7,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757518,
+        "lat": "48.222974",
+        "lon": "16.387026",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757521,
+        "lat": "48.223057",
+        "lon": "16.386883",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757522,
+        "lat": "48.223070",
+        "lon": "16.386821",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757523,
+        "lat": "48.223082",
+        "lon": "16.386757",
+        "speed": 11,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757528,
+        "lat": "48.223160",
+        "lon": "16.386463",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757530,
+        "lat": "48.223175",
+        "lon": "16.386341",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757532,
+        "lat": "48.223181",
+        "lon": "16.386208",
+        "speed": 11,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757533,
+        "lat": "48.223204",
+        "lon": "16.386159",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757534,
+        "lat": "48.223232",
+        "lon": "16.386115",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757536,
+        "lat": "48.223277",
+        "lon": "16.385998",
+        "speed": 11,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757537,
+        "lat": "48.223322",
+        "lon": "16.385964",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757538,
+        "lat": "48.223383",
+        "lon": "16.385952",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757539,
+        "lat": "48.223438",
+        "lon": "16.385959",
+        "speed": 10,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757540,
+        "lat": "48.223470",
+        "lon": "16.385964",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757542,
+        "lat": "48.223519",
+        "lon": "16.385981",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757543,
+        "lat": "48.223547",
+        "lon": "16.385971",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757547,
+        "lat": "48.223641",
+        "lon": "16.385986",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757550,
+        "lat": "48.223728",
+        "lon": "16.386011",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757552,
+        "lat": "48.223789",
+        "lon": "16.385983",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757553,
+        "lat": "48.223829",
+        "lon": "16.385961",
+        "speed": 9,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757554,
+        "lat": "48.223875",
+        "lon": "16.385954",
+        "speed": 8,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757556,
+        "lat": "48.223909",
+        "lon": "16.385982",
+        "speed": 4,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757557,
+        "lat": "48.223920",
+        "lon": "16.385977",
+        "speed": 3,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757558,
+        "lat": "48.223927",
+        "lon": "16.385976",
+        "speed": 2,
+        "speedLimit": 30,
+        "value": 1
+      },
+      {
+        "time": 1625757559,
+        "lat": "48.223925",
+        "lon": "16.385991",
+        "speed": 0,
+        "speedLimit": 30,
+        "value": 1
+      }
+    ],
+    "distractionDetails": {
+      "id": 35,
+      "distractedSwipeTypeMinutes": 3,
+      "distractedPhoneHandheldMinutes": 0,
+      "distractedPhoneHandsfreeMinutes": 0,
+      "distractionFreeMinutes": 17,
+      "totalDistractedMinutes": 3,
+      "distractedSwipeTypePct": 15,
+      "distractedPhoneHandheldPct": 0,
+      "distractedPhoneHandsfreePct": 0,
+      "distractionFreePct": 85
+    },
+    "distractions": [
+        {
+          "type": "SWIPE_AND_TYPE",
+          "start": 1625757443,
+          "end": 1625757563
+        },
+        {
+          "type": "SWIPE_AND_TYPE",
+          "start": 1625758007,
+          "end": 1625758067
+        }
+    ],
+    "sectionDistance": {
+      "green": 2038,
+      "yellow": 0,
+      "red": 103
+    },
+    "durationMinutes": 20,
+    "drivingEvents": [
+      {
+        "time": 1625757061,
+        "lat": 48.212424,
+        "lon": 16.401201,
+        "value": 1,
+        "type": "BRK"
+      },
+      {
+        "time": 1625757253,
+        "lat": 48.217553,
+        "lon": 16.391898,
+        "value": 1,
+        "type": "BRK"
+      },
+      {
+        "time": 1625757420,
+        "lat": 48.220704,
+        "lon": 16.389859,
+        "value": 2,
+        "type": "BRK"
+      },
+      {
+        "time": 1625757532,
+        "lat": 48.223181,
+        "lon": 16.386208,
+        "value": 2,
+        "type": "CRN"
+      },
+      {
+        "time": 1625757681,
+        "lat": 48.223925,
+        "lon": 16.385991,
+        "value": 1,
+        "type": "ACC"
+      },
+      {
+        "time": 1625757793,
+        "lat": 48.223925,
+        "lon": 16.385991,
+        "value": 1,
+        "type": "BRK"
+      },
+      {
+        "time": 1625757827,
+        "lat": 48.223925,
+        "lon": 16.385991,
+        "value": 2,
+        "type": "BRK"
+      }
+    ],
+    "dangerousAreas": [
+      {
+        "uid": "0cf5fa0c-18a4-4aad-bc66-415570720310",
+        "name": "-",
+        "lat": 48.2146097,
+        "lon": 16.3977301,
+        "radius": 200.0
+      },
+      {
+        "uid": "fe57d95b-40a8-48d6-80df-c6d0def90c7b",
+        "name": "Kindergarten Bunte Welt",
+        "lat": 48.2239821,
+        "lon": 16.3878604,
+        "radius": 200.0
+      }
+    ]
+  }
+}
+
