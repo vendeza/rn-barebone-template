@@ -39,11 +39,8 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     searchFieldsContainer: {
-        flex: 1,
-        backgroundColor: colors.white,
         flexDirection:'row',
-        paddingBottom: 40,
-        justifyContent: "center",
+        paddingBottom:10,
     },
     showDatePicker: {
         alignItems: "flex-start",

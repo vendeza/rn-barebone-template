@@ -4,7 +4,17 @@ import {
     FETCH_TRIP_INFO_SUCCESS,
 } from "./actions";
 
-const initialState = {};
+const initialState = {
+    tripInfoReducer: {
+        startAddress: "",
+        endAddress: "",
+        startTs: null,
+        endTs: null,
+        tripPoints: [],
+        id: 0,
+        scores: {distraction: 0, safety: 0, speed: 0, total: 0},
+    },
+};
 
 export function tripInfoReducer(state = initialState, action) {
     switch (action.type) {

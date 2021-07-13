@@ -34,7 +34,6 @@ const percentageFormatter = (num) => {
     }
 };
 
-// https://stackoverflow.com/a/32638472/14903155
 const formatLargeNumber = (num, fixed) => {
     if (num === null) {
         return null;
@@ -59,7 +58,7 @@ const timestampDateFormatter = (ts) => {
     return `${exp_date}`;
 };
 
-const timestampTimeFormatter = (ts) => {
+const timestampDateTimeFormatter = (ts) => {
     if (ts === 0) return "N/A";
     const exp_date = new Date(ts * 1000).toLocaleDateString("en-US");
     const exp_time = new Date(ts * 1000).toLocaleTimeString("en-US", {
@@ -69,12 +68,22 @@ const timestampTimeFormatter = (ts) => {
     return `${exp_date} ${exp_time}`;
 };
 
+const timestampTimeFormatter = (ts) => {
+    if (ts === 0) return "N/A";
+    const exp_time = new Date(ts * 1000).toLocaleTimeString("EU", {
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+    return `${exp_time}`;
+};
+
 export {
     fixedFloat,
     priceFormatter,
     profitFormatter,
     percentageFormatter,
     formatLargeNumber,
+    timestampDateTimeFormatter,
     timestampDateFormatter,
     timestampTimeFormatter,
 };
