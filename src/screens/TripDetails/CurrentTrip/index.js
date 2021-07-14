@@ -6,7 +6,7 @@ import styles from "../../Start/styles";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {fetchTripInfo} from "../store/fetchers";
-import {timestampTimeFormatter} from "../../../utils/helper";
+import { timestampTimeFormatter, toFixed } from "../../../utils/helper";
 import Icons from "react-native-vector-icons/MaterialIcons";
 import {
   Circle,
@@ -87,20 +87,44 @@ const TripDetails = (props) => {
 
 
   const indexToClipFrom = 4;
+
   const Clips = ({ x, y,width }) => {
-    console.log(x);
-    console.log(y);
-    console.log(width);
+    const coefficient = toFixed(width/(props.tripInfo.endTs-props.tripInfo.startTs));
+    console.log("coefficient: "+coefficient);
+
+    const startTs=props.tripInfo.startTs;
+    const endTs=props.tripInfo.endTs;
+
+     const tripTime = endTs-startTs;
+
+    const distractions = props.tripInfo.distractions;
+
+    const dZone = distractions[0];
+    console.log("dZone: "+dZone);
+
+    const a1 = dZone.start - startTs;
+    const a2 = dZone.end - startTs;
+
+
+    console.log("a1: "+a1);
+    console.log("a2: "+a2 );
+    const b1 = a1/tripTime;   //доля в отрезке стартовой токи
+    const b2 = a2/tripTime; //доля в отрезке конечной токи
+    console.log("b1: "+b1);
+    console.log("b2: "+b2 );
+    console.log("tripTime: "+tripTime);
+
+
+
+
+
     return(
     <Defs key={ 'clips' }>
       <ClipPath id="clip-path-1">
         <Rect x={ '0' } y={ '0' } width={ width } height={ '100%' }/>
       </ClipPath>
       <ClipPath id="clip-path-2">
-        <Rect x={ "60" } y={ "0" } width={100 } height={ '100%' }/>
-      </ClipPath>
-      <ClipPath id="clip-path-3">
-        <Rect x={"220"} y={"0"} width={ 100 } height={ '100%' }/>
+        <Rect x={b1*width} y={ "0" } width={b2*width } height={ '100%' }/>
       </ClipPath>
     </Defs>
   )}
@@ -151,11 +175,12 @@ const TripDetails = (props) => {
   return (
     <View style={{flex: 1}}>
 
-      <View style={{ height:200 }}>
+      <View style={{ height:200,width:380 }}>
         <Text style={styles.mainText}>
           {"Samstag, 18. Juli 2021"}
         </Text>
-
+        <View><Text>{"Start trip: " + timestampTimeFormatter(props.tripInfo.startTs)}</Text></View>
+        <View><Text>{"End trip: " +timestampTimeFormatter(props.tripInfo.endTs)}</Text></View>
         <LineChart
           style={ { height: 200 } }
           data={data}
@@ -168,7 +193,6 @@ const TripDetails = (props) => {
           }}>
           <Clips/>
           <DashedLine/>
-          <DashedLine2/>
         </LineChart>
         <Text style={styles.mainText}>
           {"Samstag, 18. Juli 2021"}
