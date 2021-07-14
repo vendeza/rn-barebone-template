@@ -10,6 +10,8 @@ import {timestampTimeFormatter} from "../../../utils/helper";
 import {ClipPath, Defs, Rect} from "react-native-svg";
 import {LineChart, Path} from "react-native-svg-charts";
 import * as shape from "d3-shape";
+import Icons from "react-native-vector-icons/MaterialIcons";
+import ProgressCircle from "react-native-progress-circle";
 
 const TripDetails = (props) => {
     useEffect(() => {
@@ -49,6 +51,7 @@ const TripDetails = (props) => {
             </View>
         );
     };
+
     const data = [0, 0];
     if (!props.tripInfo) {
         return <View />;
@@ -68,13 +71,6 @@ const TripDetails = (props) => {
         const b1 = a1 / tripTime; //доля в отрезке стартовой токи
         const b2 = a2 / tripTime; //доля в отрезке конечной токи
 
-        console.log("dZone: " + dZone);
-        console.log("a1: " + a1);
-        console.log("a2: " + a2);
-        console.log("b1: " + b1);
-        console.log("b2: " + b2);
-        console.log("tripTime: " + tripTime);
-
         return (
             <ClipPath id={`clip-path-${index + 1}`}>
                 <Rect
@@ -86,8 +82,6 @@ const TripDetails = (props) => {
             </ClipPath>
         );
     };
-
-    const indexToClipFrom = 4;
 
     const Clips = ({x, y, width}) => {
         return (
@@ -123,22 +117,85 @@ const TripDetails = (props) => {
 
     const line = shape.curveBasis;
     return (
-        <View style={{flex: 1}}>
-            <View style={{flex:1}}>
+        <View style={{flex: 1, backgroundColor: "#f1f1f1"}}>
+            <View style={{flex: 1}}>
                 <Text style={styles.mainText}>{"Samstag, 18. Juli 2021"}</Text>
-                <View>
-                    <Text>
-                        {"Start trip: " +
-                            timestampTimeFormatter(props.tripInfo.startTs)}
-                    </Text>
+                <View
+                    style={{
+                        flexDirection: "row",
+                        padding: 10,
+                        paddingVertical: 20,
+                        backgroundColor: "#fff",
+                        alignItems: "center",
+                    }}>
+                    <Icons name={"chevron-left"} size={30} color={"#444"} style={{marginRight:10}} />
+                    <View
+                        style={{
+                            height: 100,
+                            width: 50,
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                        }}>
+                        <Text>
+                            {timestampTimeFormatter(props.tripInfo.startTs)}
+                        </Text>
+                        <Text>
+                            {timestampTimeFormatter(props.tripInfo.endTs)}
+                        </Text>
+                    </View>
+                    <View
+                        style={{
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}>
+                        <Icons name={"home"} size={20} color={"red"} />
+                        <View
+                            style={{
+                                height: 60,
+                                width: 4,
+                                backgroundColor: "red",
+                            }}></View>
+                        <Icons name={"home"} size={20} color={"red"} />
+                    </View>
+                    <View
+                        style={{
+                            height: 100,
+                            paddingLeft: 10,
+                            flex: 1,
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                        }}>
+                        <Text>
+                            {props.tripInfo.startAddress.substring(0, 8)}
+                        </Text>
+                        <Text>{props.tripInfo.endAddress.substring(0, 8)}</Text>
+                    </View>
+                    <View
+                        style={{
+                            flex: 1,
+                            paddingLeft: 10,
+                            flexDirection: "column",
+                            justifyContent: "space-between",
+                        }}>
+                        <ProgressCircle
+                            percent={75}
+                            radius={50}
+                            borderWidth={4}
+                            color="'rgb(60,187,4)'"
+                            shadowColor="#ccc"
+                            bgColor="#fff">
+                            <Text style={{fontSize: 18}}>{"75"}</Text>
+                            <Icons name={"home"} size={20} color={"red"} />
+                        </ProgressCircle>
+                    </View>
+                    <Icons name={"chevron-right"} size={30} color={"#444"} style={{marginLeft:10}} />
                 </View>
-                <View>
-                    <Text>
-                        {"End trip: " +
-                            timestampTimeFormatter(props.tripInfo.endTs)}
-                    </Text>
-                </View>
-                <View style={{justifyContent:'center', flex:1, alignItems:'center'}}>
+                <View
+                    style={{
+                        justifyContent: "center",
+                        flex: 1,
+                        alignItems: "center",
+                    }}>
                     <LineChart
                         style={{height: 50, width: "90%"}}
                         data={data}
@@ -157,21 +214,20 @@ const TripDetails = (props) => {
                         )}
                     </LineChart>
                 </View>
-                <Text style={styles.mainText}>{"Samstag, 18. Juli 2021"}</Text>
             </View>
         </View>
     );
 };
 
 const mapStateToProps = (state) => {
-    const {tripInfoReducer} = state;
-    return {
-        tripInfo: tripInfoReducer.tripInfo,
-    };
+  const { tripInfoReducer } = state;
+  return {
+    tripInfo: tripInfoReducer.tripInfo,
+  };
 };
 
 const mapDispatchToProps = (dispatch) =>
-    bindActionCreators({fetchTripInfo: fetchTripInfo}, dispatch);
+  bindActionCreators({ fetchTripInfo: fetchTripInfo }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripDetails);
 
