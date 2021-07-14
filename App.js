@@ -52,7 +52,7 @@ const screenOptions = (props) => ({
             <Icons
                 name={iconName}
                 size={30}
-                color={focused ? colors.orange : "#A1A1A1"}
+                color={focused ? colors.red : "#A1A1A1"}
             />
         );
     },

@@ -27,6 +27,7 @@ Card.propTypes = {
 const styles = StyleSheet.create({
     position: {
         padding: 20,
+        alignItems:'center',
         backgroundColor: "#fff",
         borderRadius: 10,
         elevation: 9,
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
             width: 0,
             height: 0,
         },
-        shadowOpacity: 0.1,
+        shadowOpacity: 0.2,
         shadowRadius: 9.1,
     },
 });

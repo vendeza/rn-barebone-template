@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
-import {Text, View} from "react-native";
-import {ButtonCustom, Card} from "../../../components";
-import colors from "../../../styles/colors";
+import {ScrollView, Text, View} from "react-native";
+import {Card} from "../../../components";
 import styles from "../../Start/styles";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
@@ -12,40 +11,33 @@ import {LineChart, Path} from "react-native-svg-charts";
 import * as shape from "d3-shape";
 import Icons from "react-native-vector-icons/MaterialIcons";
 import ProgressCircle from "react-native-progress-circle";
+import commonStyles from "../../../styles/commonStyles";
 
 const TripDetails = (props) => {
     useEffect(() => {
         props.fetchTripInfo();
     }, []);
 
-    const onSearch = async () => {
-        props.navigation.navigate("OptionsSelectStock");
-    };
-
-    const GetStartedButton = () => {
+    const Challenges = ({name, score}) => {
         return (
-            <ButtonCustom
-                buttonStyle={{
-                    marginTop: 20,
-                    backgroundColor: colors.black,
-                }}
-                title={"Get Started"}
-                onPress={() => {
-                    onSearch();
-                }}
-            />
-        );
-    };
-    const Challenges = (name, score) => {
-        return (
-            <View style={{marginLeft: 10}}>
-                <View style={{width: 160}}>
+            <View style={{marginLeft: 20}}>
+                <View style={{width: 130}}>
                     <Card>
-                        <Text style={{padding: 10, fontSize: 20}}>{name}</Text>
-                        <Text style={{padding: 10, fontSize: 40}}>{score}</Text>
-                        <Text style={{padding: 10, fontSize: 18}}>
-                            {"Score"}
-                        </Text>
+                        <Text style={{padding: 10, fontSize: 14}}>{name}</Text>
+                        <ProgressCircle
+                            percent={75}
+                            radius={50}
+                            borderWidth={10}
+                            color="'rgb(60,187,4)'"
+                            shadowColor="#ccc"
+                            bgColor="#fff">
+                            <Text style={{padding: 0, fontSize: 18}}>
+                                {score}
+                            </Text>
+                            <Text style={{padding: 0, fontSize: 10}}>
+                                {"Score"}
+                            </Text>
+                        </ProgressCircle>
                     </Card>
                 </View>
             </View>
@@ -68,8 +60,8 @@ const TripDetails = (props) => {
         const a1 = dZone.start - startTs;
         const a2 = dZone.end - startTs;
 
-        const b1 = a1 / tripTime; //доля в отрезке стартовой токи
-        const b2 = a2 / tripTime; //доля в отрезке конечной токи
+        const b1 = a1 / tripTime;
+        const b2 = a2 / tripTime;
 
         return (
             <ClipPath id={`clip-path-${index + 1}`}>
@@ -107,7 +99,7 @@ const TripDetails = (props) => {
             <Path
                 key={`line-${key + 1}`}
                 d={line}
-                stroke={"rgb(199,29,29)"}
+                stroke={"rgb(227,10,10)"}
                 strokeWidth={6}
                 fill={"none"}
                 clipPath={`url(#clip-path-${index + 1})`}
@@ -118,103 +110,180 @@ const TripDetails = (props) => {
     const line = shape.curveBasis;
     return (
         <View style={{flex: 1, backgroundColor: "#f1f1f1"}}>
-            <View style={{flex: 1}}>
-                <Text style={styles.mainText}>{"Samstag, 18. Juli 2021"}</Text>
-                <View
-                    style={{
-                        flexDirection: "row",
-                        padding: 10,
-                        paddingVertical: 20,
-                        backgroundColor: "#fff",
-                        alignItems: "center",
-                    }}>
-                    <Icons name={"chevron-left"} size={30} color={"#444"} style={{marginRight:10}} />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{flex: 1}}>
+                    <Text style={styles.mainText}>
+                        {"Samstag, 18. Juli 2021"}
+                    </Text>
                     <View
                         style={{
-                            height: 100,
-                            width: 50,
-                            flexDirection: "column",
-                            justifyContent: "space-between",
+                            flexDirection: "row",
+                            padding: 10,
+                            paddingVertical: 20,
+                            backgroundColor: "#fff",
+                            alignItems: "center",
                         }}>
-                        <Text>
-                            {timestampTimeFormatter(props.tripInfo.startTs)}
-                        </Text>
-                        <Text>
-                            {timestampTimeFormatter(props.tripInfo.endTs)}
-                        </Text>
+                        <Icons
+                            name={"chevron-left"}
+                            size={30}
+                            color={"#444"}
+                            style={{marginRight: 10}}
+                        />
+                        <View
+                            style={{
+                                height: 70,
+                                width: 50,
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                            }}>
+                            <Text>
+                                {timestampTimeFormatter(props.tripInfo.startTs)}
+                            </Text>
+                            <Text>
+                                {timestampTimeFormatter(props.tripInfo.endTs)}
+                            </Text>
+                        </View>
+                        <View
+                            style={{
+                                justifyContent: "center",
+                                alignItems: "center",
+                            }}>
+                            <Icons name={"radio-button-checked"} size={20} color={"red"} style={{marginBottom:-2}}/>
+                            <View
+                                style={{
+                                    height: 40,
+                                    width: 4,
+                                    backgroundColor: "red",
+                                }}></View>
+                            <Icons name={"place"} size={20} color={"red"}  style={{marginTop:-2}}/>
+                        </View>
+                        <View
+                            style={{
+                                height: 70,
+                                paddingLeft: 10,
+                                flex: 2,
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                            }}>
+                            <Text style={{fontSize: 10}}>
+                                {props.tripInfo.startAddress.substring(0, 30) +
+                                    "..."}
+                            </Text>
+                            <Text style={{fontSize: 10}}>
+                                {props.tripInfo.endAddress.substring(0, 30) +
+                                    "..."}
+                            </Text>
+                        </View>
+                        <View
+                            style={{
+                                flex: 1,
+                                paddingLeft: 10,
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                            }}>
+                            <ProgressCircle
+                                percent={75}
+                                radius={40}
+                                borderWidth={4}
+                                color="'rgb(60,187,4)'"
+                                shadowColor="#ccc"
+                                bgColor="#fff">
+                                <Text style={{fontSize: 18}}>{"75"}</Text>
+                                <Icons name={"directions-car"} size={20} color={"red"} />
+                            </ProgressCircle>
+                        </View>
+                        <Icons
+                            name={"chevron-right"}
+                            size={30}
+                            color={"#444"}
+                            style={{marginLeft: 10}}
+                        />
                     </View>
+
                     <View
                         style={{
+                            marginTop: 20,
+                            flexDirection: "row",
+                            padding: 20,
+                            paddingVertical: 20,
+                            backgroundColor: "#fff",
                             justifyContent: "center",
                             alignItems: "center",
                         }}>
-                        <Icons name={"home"} size={20} color={"red"} />
+                        <Icons name={"radio-button-checked"} size={24} color={"red"} style={{marginRight:-2, marginBottom:-10}} />
+                        <LineChart
+                            style={{height: 50, width: "90%"}}
+                            data={data}
+                            contentInset={{top: 20, bottom: 20}}
+                            curve={line}
+                            svg={{
+                                stroke: "rgb(60,187,4)",
+                                strokeWidth: 6,
+                                clipPath: "url(#clip-path-0)",
+                            }}>
+                            <Clips />
+                            {props.tripInfo.distractions.map(
+                                (distraction, index) => (
+                                    <DistractionLine
+                                        key={index}
+                                        index={index}
+                                    />
+                                ),
+                            )}
+                        </LineChart>
+                        <Icons name={"place"} size={24} color={"red"} style={{marginLeft:-6, marginBottom:-10}} />
+                    </View>
+
+                    <View
+                        style={{
+                            flexDirection: "row",
+                            height: 80,
+                            margin: 20,
+                            padding: 10,
+                            borderColor: "#ccc",
+                            borderTopWidth: 1,
+                            borderBottomWidth: 1,
+                            alignItems: "center",
+                        }}>
+                        <View style={{flex: 1}}>
+                            <Text style={{fontSize: 20}}>{"30"}</Text>
+                            <Text
+                                style={{
+                                    marginTop: 6,
+                                    color: "#444",
+                                    fontSize: 12,
+                                }}>
+                                {"Minuten ohne Ablenkung"}
+                            </Text>
+                        </View>
+                        <View style={{flex: 1}}>
+                            <Text style={{fontSize: 20}}>{"15"}</Text>
+                            <Text
+                                style={{
+                                    marginTop: 6,
+                                    color: "#444",
+                                    fontSize: 12,
+                                }}>
+                                {"Minuten mit Ablenkung"}
+                            </Text>
+                        </View>
+                    </View>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}>
                         <View
-                            style={{
-                                height: 60,
-                                width: 4,
-                                backgroundColor: "red",
-                            }}></View>
-                        <Icons name={"home"} size={20} color={"red"} />
+                            style={{flexDirection: "row", paddingBottom: 20}}>
+                            <Challenges name={"Insgesamt"} score={75} />
+                            <Challenges name={"Ablenkung"} score={90} />
+                            <Challenges name={"Ablenkung"} score={15} />
+                            <Challenges name={"Ablenkung"} score={10} />
+                        </View>
+                    </ScrollView>
+                    <View style={{padding: 20, paddingTop:0}}>
+                        <Text style={commonStyles.p}>{"Wussten Sie, ..."}</Text>
                     </View>
-                    <View
-                        style={{
-                            height: 100,
-                            paddingLeft: 10,
-                            flex: 1,
-                            flexDirection: "column",
-                            justifyContent: "space-between",
-                        }}>
-                        <Text>
-                            {props.tripInfo.startAddress.substring(0, 8)}
-                        </Text>
-                        <Text>{props.tripInfo.endAddress.substring(0, 8)}</Text>
-                    </View>
-                    <View
-                        style={{
-                            flex: 1,
-                            paddingLeft: 10,
-                            flexDirection: "column",
-                            justifyContent: "space-between",
-                        }}>
-                        <ProgressCircle
-                            percent={75}
-                            radius={50}
-                            borderWidth={4}
-                            color="'rgb(60,187,4)'"
-                            shadowColor="#ccc"
-                            bgColor="#fff">
-                            <Text style={{fontSize: 18}}>{"75"}</Text>
-                            <Icons name={"home"} size={20} color={"red"} />
-                        </ProgressCircle>
-                    </View>
-                    <Icons name={"chevron-right"} size={30} color={"#444"} style={{marginLeft:10}} />
                 </View>
-                <View
-                    style={{
-                        justifyContent: "center",
-                        flex: 1,
-                        alignItems: "center",
-                    }}>
-                    <LineChart
-                        style={{height: 50, width: "90%"}}
-                        data={data}
-                        contentInset={{top: 20, bottom: 20}}
-                        curve={line}
-                        svg={{
-                            stroke: "#27A69A",
-                            strokeWidth: 6,
-                            clipPath: "url(#clip-path-0)",
-                        }}>
-                        <Clips />
-                        {props.tripInfo.distractions.map(
-                            (distraction, index) => (
-                                <DistractionLine key={index} index={index} />
-                            ),
-                        )}
-                    </LineChart>
-                </View>
-            </View>
+            </ScrollView>
         </View>
     );
 };

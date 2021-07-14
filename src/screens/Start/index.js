@@ -1,6 +1,5 @@
 import React from "react";
 import {Text, View} from "react-native";
-import styles from "./styles";
 import {ButtonCustom, ContainerView} from "../../components";
 import colors from "../../styles/colors";
 import {bindActionCreators} from "redux";
@@ -10,7 +9,7 @@ import commonStyles from "../../styles/commonStyles";
 
 const Start = (props) => {
     const onSearch = async () => {
-        props.navigation.navigate("Browse");
+        props.navigation.navigate("TripDetails");
     };
 
     const GetStartedButton = () => {
@@ -31,17 +30,13 @@ const Start = (props) => {
     return (
         <View style={{flex: 1}}>
             <ContainerView>
-                <View style={styles.searchFieldsContainer}>
-                    <Text style={commonStyles.h1}>
-                        {"The perfect template to start your project"}
-                    </Text>
-                    <Text style={commonStyles.p}>
-                        {"Our algorithms help to lorem ipsum dolor sit amet, consectetur adipiscing " +
-                            "elit, sed do eiusmod tempor incididunt ut labore. Let’s help find the strategy " +
-                            "that works best for you."}
-                    </Text>
-                    <GetStartedButton />
-                </View>
+                <Text style={commonStyles.h1}>
+                    {"The perfect trip tracker"}
+                </Text>
+                <Text style={commonStyles.p}>
+                    {"The describe of the trip tracker app"}
+                </Text>
+                <GetStartedButton />
             </ContainerView>
         </View>
     );
@@ -54,11 +49,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) =>
-    bindActionCreators(
-        {
-            userLogout: userLogout,
-        },
-        dispatch,
-    );
+  bindActionCreators(
+    {
+      userLogout: userLogout,
+    },
+    dispatch,
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Start);

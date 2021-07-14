@@ -39,7 +39,7 @@ const commonStyles = StyleSheet.create({
     },
     p: {
         color: colors.lightGray,
-        fontSize: 18,
+        fontSize: 16,
         lineHeight: 26,
     },
     blueIconContainer: {

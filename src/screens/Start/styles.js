@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     mainText: {
         fontSize: 18,
-        textAlign: "center",
+        textAlign: "left",
         paddingHorizontal: 20,
         paddingVertical: 30,
         lineHeight: 26,
