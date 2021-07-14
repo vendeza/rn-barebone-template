@@ -6,6 +6,10 @@ import {
 
 const initialState = {
     tripInfoReducer: {
+        distractionDetails:{
+            distractedPhoneHandsfreeMinutes:0,
+            distractedPhoneHandheldMinutes:0
+        },
         distractions: [{end: null, start: null, type: ""}],
         startAddress: "",
         endAddress: "",

@@ -134,7 +134,7 @@ const MyTheme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        primary: colors.orange,
+        primary: colors.red,
         background: "#fff",
     },
 };

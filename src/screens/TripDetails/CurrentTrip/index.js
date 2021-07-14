@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {fetchTripInfo} from "../store/fetchers";
 import {timestampTimeFormatter} from "../../../utils/helper";
-import {ClipPath, Defs, Rect} from "react-native-svg";
+import {ClipPath, Defs, ForeignObject, G, Rect} from "react-native-svg";
 import {LineChart, Path} from "react-native-svg-charts";
 import * as shape from "d3-shape";
 import Icons from "react-native-vector-icons/MaterialIcons";
@@ -25,7 +25,7 @@ const TripDetails = (props) => {
                     <Card>
                         <Text style={{padding: 10, fontSize: 14}}>{name}</Text>
                         <ProgressCircle
-                            percent={75}
+                            percent={score}
                             radius={50}
                             borderWidth={10}
                             color="'rgb(60,187,4)'"
@@ -75,6 +75,33 @@ const TripDetails = (props) => {
         );
     };
 
+    const ChartPoint = ({
+        width,
+        distraction,
+    }) => {
+        const startTs = props.tripInfo.startTs;
+        const endTs = props.tripInfo.endTs;
+
+        const tripTime = endTs - startTs;
+
+        const dZone = distraction;
+
+        const a1 = dZone.start - startTs;
+        const a2 = dZone.end - startTs;
+
+        const b1 = a1 / tripTime;
+        const b2 = a2 / tripTime;
+        return (
+            <ForeignObject
+                x={(b1 * width + b2 * width) / 2}
+                y={40}
+                width={100}
+                height={40}>
+                <Icons name={"touch-app"} color={"red"} size={24} />
+            </ForeignObject>
+        );
+    };
+
     const Clips = ({x, y, width}) => {
         return (
             <Defs key={"clips"}>
@@ -94,16 +121,18 @@ const TripDetails = (props) => {
         );
     };
 
-    const DistractionLine = ({line, key, index}) => {
+    const DistractionLine = ({line, key, index, distraction}) => {
         return (
-            <Path
-                key={`line-${key + 1}`}
-                d={line}
-                stroke={"rgb(227,10,10)"}
-                strokeWidth={6}
-                fill={"none"}
-                clipPath={`url(#clip-path-${index + 1})`}
-            />
+            <G>
+                <Path
+                    key={`line-${key + 1}`}
+                    d={line}
+                    stroke={"rgb(227,10,10)"}
+                    strokeWidth={6}
+                    fill={"none"}
+                    clipPath={`url(#clip-path-${index + 1})`}
+                />
+            </G>
         );
     };
 
@@ -148,14 +177,24 @@ const TripDetails = (props) => {
                                 justifyContent: "center",
                                 alignItems: "center",
                             }}>
-                            <Icons name={"radio-button-checked"} size={20} color={"red"} style={{marginBottom:-2}}/>
+                            <Icons
+                                name={"radio-button-checked"}
+                                size={20}
+                                color={"red"}
+                                style={{marginBottom: -2}}
+                            />
                             <View
                                 style={{
                                     height: 40,
                                     width: 4,
                                     backgroundColor: "red",
                                 }}></View>
-                            <Icons name={"place"} size={20} color={"red"}  style={{marginTop:-2}}/>
+                            <Icons
+                                name={"place"}
+                                size={20}
+                                color={"red"}
+                                style={{marginTop: -2}}
+                            />
                         </View>
                         <View
                             style={{
@@ -182,14 +221,18 @@ const TripDetails = (props) => {
                                 justifyContent: "space-between",
                             }}>
                             <ProgressCircle
-                                percent={75}
+                                percent={props.tripInfo.scores.distraction}
                                 radius={40}
                                 borderWidth={4}
                                 color="'rgb(60,187,4)'"
                                 shadowColor="#ccc"
                                 bgColor="#fff">
-                                <Text style={{fontSize: 18}}>{"75"}</Text>
-                                <Icons name={"directions-car"} size={20} color={"red"} />
+                                <Text style={{fontSize: 18}}>{props.tripInfo.scores.distraction}</Text>
+                                <Icons
+                                    name={"directions-car"}
+                                    size={20}
+                                    color={"red"}
+                                />
                             </ProgressCircle>
                         </View>
                         <Icons
@@ -210,11 +253,16 @@ const TripDetails = (props) => {
                             justifyContent: "center",
                             alignItems: "center",
                         }}>
-                        <Icons name={"radio-button-checked"} size={24} color={"red"} style={{marginRight:-2, marginBottom:-10}} />
+                        <Icons
+                            name={"radio-button-checked"}
+                            size={24}
+                            color={"red"}
+                            style={{marginRight: -2, marginBottom: 10}}
+                        />
                         <LineChart
-                            style={{height: 50, width: "90%"}}
+                            style={{height: 70, width: "90%"}}
                             data={data}
-                            contentInset={{top: 20, bottom: 20}}
+                            contentInset={{top: 0, bottom: 40}}
                             curve={line}
                             svg={{
                                 stroke: "rgb(60,187,4)",
@@ -222,16 +270,32 @@ const TripDetails = (props) => {
                                 clipPath: "url(#clip-path-0)",
                             }}>
                             <Clips />
+
+                            {props.tripInfo.distractions.map(
+                                (distraction, index) => (
+                                    <ChartPoint
+                                        key={index}
+                                        index={index}
+                                        distraction={distraction}
+                                    />
+                                ),
+                            )}
                             {props.tripInfo.distractions.map(
                                 (distraction, index) => (
                                     <DistractionLine
                                         key={index}
                                         index={index}
+                                        distraction={distraction}
                                     />
                                 ),
                             )}
                         </LineChart>
-                        <Icons name={"place"} size={24} color={"red"} style={{marginLeft:-6, marginBottom:-10}} />
+                        <Icons
+                            name={"place"}
+                            size={24}
+                            color={"red"}
+                            style={{marginLeft: -6, marginBottom: 10}}
+                        />
                     </View>
 
                     <View
@@ -239,6 +303,7 @@ const TripDetails = (props) => {
                             flexDirection: "row",
                             height: 80,
                             margin: 20,
+                          marginBottom:0,
                             padding: 10,
                             borderColor: "#ccc",
                             borderTopWidth: 1,
@@ -246,7 +311,7 @@ const TripDetails = (props) => {
                             alignItems: "center",
                         }}>
                         <View style={{flex: 1}}>
-                            <Text style={{fontSize: 20}}>{"30"}</Text>
+                            <Text style={{fontSize: 20}}>{props.tripInfo.distractionDetails.distractedPhoneHandsfreeMinutes}</Text>
                             <Text
                                 style={{
                                     marginTop: 6,
@@ -257,7 +322,7 @@ const TripDetails = (props) => {
                             </Text>
                         </View>
                         <View style={{flex: 1}}>
-                            <Text style={{fontSize: 20}}>{"15"}</Text>
+                            <Text style={{fontSize: 20}}>{props.tripInfo.distractionDetails.distractedPhoneHandheldMinutes}</Text>
                             <Text
                                 style={{
                                     marginTop: 6,
@@ -271,15 +336,14 @@ const TripDetails = (props) => {
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}>
-                        <View
-                            style={{flexDirection: "row", paddingBottom: 20}}>
-                            <Challenges name={"Insgesamt"} score={75} />
-                            <Challenges name={"Ablenkung"} score={90} />
-                            <Challenges name={"Ablenkung"} score={15} />
-                            <Challenges name={"Ablenkung"} score={10} />
+                        <View style={{flexDirection: "row", paddingVertical: 20}}>
+                            <Challenges name={"Insgesamt"} score={props.tripInfo.scores.distraction} />
+                            <Challenges name={"Ablenkung"} score={props.tripInfo.scores.safety} />
+                            <Challenges name={"Ablenkung"} score={props.tripInfo.scores.speed} />
+                            <Challenges name={"Ablenkung"} score={props.tripInfo.scores.total} />
                         </View>
                     </ScrollView>
-                    <View style={{padding: 20, paddingTop:0}}>
+                    <View style={{padding: 20, paddingTop: 0}}>
                         <Text style={commonStyles.p}>{"Wussten Sie, ..."}</Text>
                     </View>
                 </View>

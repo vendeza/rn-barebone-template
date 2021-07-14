@@ -1898,8 +1898,8 @@
     "distractionDetails": {
       "id": 35,
       "distractedSwipeTypeMinutes": 3,
-      "distractedPhoneHandheldMinutes": 0,
-      "distractedPhoneHandsfreeMinutes": 0,
+      "distractedPhoneHandheldMinutes": 14,
+      "distractedPhoneHandsfreeMinutes": 32,
       "distractionFreeMinutes": 17,
       "totalDistractedMinutes": 3,
       "distractedSwipeTypePct": 15,
