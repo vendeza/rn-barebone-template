@@ -5,7 +5,7 @@ import styles from "../../Start/styles";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {fetchTripInfo} from "../store/fetchers";
-import {timestampTimeFormatter} from "../../../utils/helper";
+import { getCurrentDate, timestampTimeFormatter } from "../../../utils/helper";
 import {ClipPath, Defs, ForeignObject, G, Rect} from "react-native-svg";
 import {LineChart, Path} from "react-native-svg-charts";
 import * as shape from "d3-shape";
@@ -133,13 +133,14 @@ const TripDetails = (props) => {
         );
     };
 
+    const currentDate = getCurrentDate();
     const line = shape.curveBasis;
     return (
         <View style={{flex: 1, backgroundColor: "#f1f1f1"}}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{flex: 1}}>
                     <Text style={styles.mainText}>
-                        {"Samstag, 18. Juli 2021"}
+                        {currentDate}
                     </Text>
                     <View
                         style={{

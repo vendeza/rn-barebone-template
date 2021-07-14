@@ -95,7 +95,19 @@ const timestampTimeFormatter = (ts) => {
     return `${exp_time}`;
 };
 
+const getCurrentDate = () =>{
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    const d = new Date();
+    return `${days[d.getDay()]}, ${d.getDay()}. ${monthNames[d.getMonth()]} ${d.getFullYear()}`;
+};
+
 export {
+    getCurrentDate,
     fixedFloat,
     toFixed,
     priceFormatter,
