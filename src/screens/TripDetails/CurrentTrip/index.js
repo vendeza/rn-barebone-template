@@ -75,10 +75,7 @@ const TripDetails = (props) => {
         );
     };
 
-    const ChartPoint = ({
-        width,
-        distraction,
-    }) => {
+    const ChartPoint = ({width, distraction}) => {
         const startTs = props.tripInfo.startTs;
         const endTs = props.tripInfo.endTs;
 
@@ -227,7 +224,9 @@ const TripDetails = (props) => {
                                 color="'rgb(60,187,4)'"
                                 shadowColor="#ccc"
                                 bgColor="#fff">
-                                <Text style={{fontSize: 18}}>{props.tripInfo.scores.distraction}</Text>
+                                <Text style={{fontSize: 18}}>
+                                    {props.tripInfo.scores.distraction}
+                                </Text>
                                 <Icons
                                     name={"directions-car"}
                                     size={20}
@@ -303,7 +302,7 @@ const TripDetails = (props) => {
                             flexDirection: "row",
                             height: 80,
                             margin: 20,
-                          marginBottom:0,
+                            marginBottom: 0,
                             padding: 10,
                             borderColor: "#ccc",
                             borderTopWidth: 1,
@@ -311,7 +310,12 @@ const TripDetails = (props) => {
                             alignItems: "center",
                         }}>
                         <View style={{flex: 1}}>
-                            <Text style={{fontSize: 20}}>{props.tripInfo.distractionDetails.distractedPhoneHandsfreeMinutes}</Text>
+                            <Text style={{fontSize: 20}}>
+                                {
+                                    props.tripInfo.distractionDetails
+                                        .distractedPhoneHandsfreeMinutes
+                                }
+                            </Text>
                             <Text
                                 style={{
                                     marginTop: 6,
@@ -322,7 +326,12 @@ const TripDetails = (props) => {
                             </Text>
                         </View>
                         <View style={{flex: 1}}>
-                            <Text style={{fontSize: 20}}>{props.tripInfo.distractionDetails.distractedPhoneHandheldMinutes}</Text>
+                            <Text style={{fontSize: 20}}>
+                                {
+                                    props.tripInfo.distractionDetails
+                                        .distractedPhoneHandheldMinutes
+                                }
+                            </Text>
                             <Text
                                 style={{
                                     marginTop: 6,
@@ -336,11 +345,24 @@ const TripDetails = (props) => {
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}>
-                        <View style={{flexDirection: "row", paddingVertical: 20}}>
-                            <Challenges name={"Insgesamt"} score={props.tripInfo.scores.distraction} />
-                            <Challenges name={"Ablenkung"} score={props.tripInfo.scores.safety} />
-                            <Challenges name={"Ablenkung"} score={props.tripInfo.scores.speed} />
-                            <Challenges name={"Ablenkung"} score={props.tripInfo.scores.total} />
+                        <View
+                            style={{flexDirection: "row", paddingVertical: 20}}>
+                            <Challenges
+                                name={"Insgesamt"}
+                                score={props.tripInfo.scores.distraction}
+                            />
+                            <Challenges
+                                name={"Ablenkung"}
+                                score={props.tripInfo.scores.safety}
+                            />
+                            <Challenges
+                                name={"Ablenkung"}
+                                score={props.tripInfo.scores.speed}
+                            />
+                            <Challenges
+                                name={"Ablenkung"}
+                                score={props.tripInfo.scores.total}
+                            />
                         </View>
                     </ScrollView>
                     <View style={{padding: 20, paddingTop: 0}}>
