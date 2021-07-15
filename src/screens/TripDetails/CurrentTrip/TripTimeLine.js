@@ -6,6 +6,7 @@ import {LineChart, Path} from "react-native-svg-charts";
 import {ClipPath, Defs, ForeignObject, G, Rect} from "react-native-svg";
 import {connect} from "react-redux";
 import * as shape from "d3-shape";
+import colors from "../../../styles/colors";
 
 const TripTimeLine = (props) => {
     const data = [0, 0];
@@ -23,7 +24,7 @@ const TripTimeLine = (props) => {
         return {startCoefficient, endCoefficient};
     };
 
-    const RenderLine = ({tripInfo, width, distraction, index}) => {
+    const RenderLine = ({ width, distraction, index}) => {
         const {startCoefficient, endCoefficient} = getCoefficients(distraction);
 
         return (
@@ -48,7 +49,7 @@ const TripTimeLine = (props) => {
                 y={40}
                 width={100}
                 height={40}>
-                <Icons name={"touch-app"} color={"red"} size={24} />
+                <Icons name={"touch-app"} color={colors.red} size={24} />
             </ForeignObject>
         );
     };
@@ -72,13 +73,13 @@ const TripTimeLine = (props) => {
         );
     };
 
-    const DistractionLine = ({line, index, distraction}) => {
+    const DistractionLine = ({line, index}) => {
         return (
             <G key={index}>
                 <Path
                     key={`line-${index + 1}`}
                     d={line}
-                    stroke={"rgb(227,10,10)"}
+                    stroke={colors.red}
                     strokeWidth={6}
                     fill={"none"}
                     clipPath={`url(#clip-path-${index + 1})`}
@@ -91,7 +92,7 @@ const TripTimeLine = (props) => {
             <Icons
                 name={"radio-button-checked"}
                 size={24}
-                color={"red"}
+                color={colors.red}
                 style={{marginRight: -2, marginBottom: 10}}
             />
             <LineChart
@@ -100,7 +101,7 @@ const TripTimeLine = (props) => {
                 contentInset={{top: 0, bottom: 40}}
                 curve={line}
                 svg={{
-                    stroke: "rgb(60,187,4)",
+                    stroke: colors.green ,
                     strokeWidth: 6,
                     clipPath: "url(#clip-path-0)",
                 }}>
@@ -124,7 +125,7 @@ const TripTimeLine = (props) => {
             <Icons
                 name={"place"}
                 size={24}
-                color={"red"}
+                color={colors.red}
                 style={{marginLeft: -6, marginBottom: 10}}
             />
         </View>

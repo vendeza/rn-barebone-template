@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {Text, View} from "react-native";
 import {Card} from "../../../components";
 import ProgressCircle from "react-native-progress-circle";
+import colors from "../../../styles/colors";
 
 const ChallengeCard = ({name, score}) => {
     return (
@@ -14,7 +15,7 @@ const ChallengeCard = ({name, score}) => {
                         percent={score}
                         radius={50}
                         borderWidth={10}
-                        color="'rgb(60,187,4)'"
+                        color={colors.green}
                         shadowColor="#ccc"
                         bgColor="#fff">
                         <Text style={{padding: 0, fontSize: 18}}>{score}</Text>

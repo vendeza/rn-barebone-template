@@ -7,6 +7,7 @@ import ProgressCircle from "react-native-progress-circle";
 import {bindActionCreators} from "redux";
 import {fetchTripInfo} from "../store/fetchers";
 import {connect} from "react-redux";
+import colors from "../../../styles/colors";
 
 const TripSlider = (props) => {
     return (
@@ -36,13 +37,13 @@ const TripSlider = (props) => {
                     style={{
                         height: 40,
                         width: 4,
-                        backgroundColor: "red",
+                        backgroundColor: colors.red,
                     }}
                 />
                 <Icons
                     name={"place"}
                     size={20}
-                    color={"red"}
+                    color={colors.red}
                     style={{marginTop: -2}}
                 />
             </View>
@@ -59,13 +60,17 @@ const TripSlider = (props) => {
                     percent={props.tripInfo.scores.distraction}
                     radius={40}
                     borderWidth={4}
-                    color="'rgb(60,187,4)'"
+                    color={colors.green}
                     shadowColor="#ccc"
                     bgColor="#fff">
                     <Text style={{fontSize: 18}}>
                         {props.tripInfo.scores.distraction}
                     </Text>
-                    <Icons name={"directions-car"} size={20} color={"red"} />
+                    <Icons
+                        name={"directions-car"}
+                        size={20}
+                        color={colors.red}
+                    />
                 </ProgressCircle>
             </View>
             <Icons
