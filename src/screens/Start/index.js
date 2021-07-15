@@ -8,9 +8,7 @@ import {userLogout} from "../mainStore/fetchers";
 import commonStyles from "../../styles/commonStyles";
 
 const Start = (props) => {
-    const onSearch = async () => {
-        props.navigation.navigate("TripDetails");
-    };
+
 
     const GetStartedButton = () => {
         return (
@@ -21,7 +19,7 @@ const Start = (props) => {
                 }}
                 title={"Get Started"}
                 onPress={() => {
-                    onSearch();
+                  props.navigation.navigate("TripDetailsScreens");
                 }}
             />
         );

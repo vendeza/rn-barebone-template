@@ -18,7 +18,6 @@ import colors from "./src/styles/colors";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Spinner from "react-native-loading-spinner-overlay";
-import styles from "./src/screens/Start/styles";
 
 const StackNavigator = createStackNavigator();
 const Screens = createStackNavigator();
@@ -154,7 +153,7 @@ const App = (props) => {
                     <Spinner
                         visible={props.pending}
                         textContent={"Loading..."}
-                        textStyle={styles.spinnerTextStyle}
+
                     />
                 </View>
             </SafeAreaView>

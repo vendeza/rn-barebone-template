@@ -42,6 +42,13 @@ const commonStyles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 26,
     },
+    p2: {
+        fontSize: 18,
+        textAlign: "left",
+        paddingHorizontal: 20,
+        paddingVertical: 30,
+        lineHeight: 26,
+    },
     blueIconContainer: {
         ...iconContainer,
         backgroundColor: colors.blue,
