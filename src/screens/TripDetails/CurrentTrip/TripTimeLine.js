@@ -24,7 +24,7 @@ const TripTimeLine = (props) => {
         return {startCoefficient, endCoefficient};
     };
 
-    const RenderLine = ({ width, distraction, index}) => {
+    const RenderLine = ({width, distraction, index}) => {
         const {startCoefficient, endCoefficient} = getCoefficients(distraction);
 
         return (
@@ -44,7 +44,6 @@ const TripTimeLine = (props) => {
 
         return (
             <ForeignObject
-                key={index}
                 x={(startCoefficient * width + endCoefficient * width) / 2}
                 y={40}
                 width={100}
@@ -87,6 +86,7 @@ const TripTimeLine = (props) => {
             </G>
         );
     };
+
     return (
         <View style={styles.chartContainer}>
             <Icons
@@ -101,7 +101,7 @@ const TripTimeLine = (props) => {
                 contentInset={{top: 0, bottom: 40}}
                 curve={line}
                 svg={{
-                    stroke: colors.green ,
+                    stroke: colors.green,
                     strokeWidth: 6,
                     clipPath: "url(#clip-path-0)",
                 }}>
@@ -133,30 +133,30 @@ const TripTimeLine = (props) => {
 };
 
 TripTimeLine.defaultProps = {
-    tripInfo: {},
+  tripInfo: {},
 };
 
 TripTimeLine.propTypes = {
-    tripInfo: PropTypes.object,
+  tripInfo: PropTypes.object,
 };
 
 const styles = StyleSheet.create({
-    chartContainer: {
-        marginTop: 20,
-        flexDirection: "row",
-        padding: 20,
-        paddingVertical: 20,
-        backgroundColor: "#fff",
-        justifyContent: "center",
-        alignItems: "center",
-    },
+  chartContainer: {
+    marginTop: 20,
+    flexDirection: "row",
+    padding: 20,
+    paddingVertical: 20,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 const mapStateToProps = (state) => {
-    const {tripInfoReducer} = state;
-    return {
-        tripInfo: tripInfoReducer.tripInfo,
-    };
+  const { tripInfoReducer } = state;
+  return {
+    tripInfo: tripInfoReducer.tripInfo,
+  };
 };
 
 export default connect(mapStateToProps)(TripTimeLine);
