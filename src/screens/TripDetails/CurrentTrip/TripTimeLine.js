@@ -11,26 +11,27 @@ const TripTimeLine = (props) => {
     const data = [0, 0];
     const line = shape.curveBasis;
 
-    const RenderLine = ({tripInfo, width, distraction, index}) => {
-        const startTs = tripInfo.startTs;
-        const endTs = tripInfo.endTs;
-
+    const getCoefficients = (distraction) => {
+        const startTs = props.tripInfo.startTs;
+        const endTs = props.tripInfo.endTs;
         const tripTime = endTs - startTs;
-
         const dZone = distraction;
-
         const a1 = dZone.start - startTs;
         const a2 = dZone.end - startTs;
+        const startCoefficient = a1 / tripTime;
+        const endCoefficient = a2 / tripTime;
+        return {startCoefficient, endCoefficient};
+    };
 
-        const b1 = a1 / tripTime;
-        const b2 = a2 / tripTime;
+    const RenderLine = ({tripInfo, width, distraction, index}) => {
+        const {startCoefficient, endCoefficient} = getCoefficients(distraction);
 
         return (
             <ClipPath id={`clip-path-${index + 1}`}>
                 <Rect
-                    x={b1 * width}
+                    x={startCoefficient * width}
                     y={"0"}
-                    width={b2 * width}
+                    width={endCoefficient * width}
                     height={"100%"}
                 />
             </ClipPath>
@@ -38,22 +39,12 @@ const TripTimeLine = (props) => {
     };
 
     const ChartPoint = ({width, distraction, index}) => {
-        const startTs = props.tripInfo.startTs;
-        const endTs = props.tripInfo.endTs;
+        const {startCoefficient, endCoefficient} = getCoefficients(distraction);
 
-        const tripTime = endTs - startTs;
-
-        const dZone = distraction;
-
-        const a1 = dZone.start - startTs;
-        const a2 = dZone.end - startTs;
-
-        const b1 = a1 / tripTime;
-        const b2 = a2 / tripTime;
         return (
             <ForeignObject
                 key={index}
-                x={(b1 * width + b2 * width) / 2}
+                x={(startCoefficient * width + endCoefficient * width) / 2}
                 y={40}
                 width={100}
                 height={40}>
@@ -141,31 +132,30 @@ const TripTimeLine = (props) => {
 };
 
 TripTimeLine.defaultProps = {
-  tripInfo: {}
+    tripInfo: {},
 };
 
 TripTimeLine.propTypes = {
-  tripInfo: PropTypes.object,
+    tripInfo: PropTypes.object,
 };
 
 const styles = StyleSheet.create({
-  chartContainer: {
-    marginTop: 20,
-    flexDirection: "row",
-    padding: 20,
-    paddingVertical: 20,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-  }
+    chartContainer: {
+        marginTop: 20,
+        flexDirection: "row",
+        padding: 20,
+        paddingVertical: 20,
+        backgroundColor: "#fff",
+        justifyContent: "center",
+        alignItems: "center",
+    },
 });
 
-
 const mapStateToProps = (state) => {
-  const { tripInfoReducer } = state;
-  return {
-    tripInfo: tripInfoReducer.tripInfo,
-  };
+    const {tripInfoReducer} = state;
+    return {
+        tripInfo: tripInfoReducer.tripInfo,
+    };
 };
 
 export default connect(mapStateToProps)(TripTimeLine);
