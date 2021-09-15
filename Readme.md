@@ -56,12 +56,12 @@ npm run android
 npm run ios
 ```
 
-##Testing your app:
+## Testing your app:
 
-###Android
+### Android
 [Build APK](./docs/BuildAPK.md)<br/>
 
-###IOS
+### IOS
 [Uploading to Testflight](./docs/UploadToTestFlight.md)
 
 ## Supported Platforms
